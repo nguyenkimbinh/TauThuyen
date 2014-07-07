@@ -1,0 +1,24 @@
+﻿@model Pii.Areas.CargoShip.Models.Category
+@{
+    ViewBag.Title = "Thêm loại hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thêm loại hàng</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div class="editor-label">
+        Tên loại hàng
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.CategoryName)
+        @Html.ValidationMessageFor(model => model.CategoryName)
+    </div>
+    <input type="hidden" value="@ViewBag.shipId" name="shipId" />
+    <input type="hidden" value="@ViewBag.tripId" name="tripId" />
+    <p>
+        <input type="submit" value="Thêm" />
+    </p>
+}

@@ -1,0 +1,26 @@
+﻿@model Pii.Areas.Accounts.Models.Login
+@{
+    ViewBag.Title = "Đăng nhập";
+    Layout = "_LogOnLayout.cshtml";
+}
+<h1 class="title">Đăng nhập</h1>
+@Html.ValidationSummary(true)
+@using (Html.BeginForm())
+{
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.UserName)
+    </div>
+
+    <div class="editor-field">
+        @Html.PasswordFor(m => m.Password)
+    </div>
+    <div class="w-buttons">
+        <button class="button" onclick="window.location='/'">Hủy bỏ</button>
+        <input class="button" type="submit" value="Đăng nhập" />
+    </div>
+}
+<script>
+    if ($("#UserName").val() == "") { $("#UserName").watermark("Tên đăng nhập"); }
+    if ($("#Password").val() == "") { $("#Password").watermark("Mật khẩu"); }
+</script>
+

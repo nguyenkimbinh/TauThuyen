@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Confirm";
+}
+<div class="register-page">
+    <div class="content">
+        <h1>Kích hoạt tài khoản</h1>
+        @if (ViewBag.Success == true)
+        {
+            <h2 class="sub-title">Tài khoản của đã được kích hoạt thành công! Hãy <a href="@Url.Action("Login")">đăng nhập</a> ngay bây giờ.</h2>
+        }
+        else
+        {
+            <h2 class="sub-title">Kích hoạt tài khoản không thành công!.</h2>
+        }
+    </div>
+</div>

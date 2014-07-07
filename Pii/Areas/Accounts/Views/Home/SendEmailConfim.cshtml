@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "SendEmailConfim";
+}
+<div class="register-page">
+    <div class="content">
+        <h1>Gửi xác nhận email</h1>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <input type="email" value="@ViewBag.Email" id="Email" name="Email" />
+            <input type="submit" value="Gửi xác nhận" />
+        }
+        @if (ViewBag.Send != null)
+        {
+            var send = (bool)ViewBag.Send;
+            if (send)
+            {
+            <h2 class="sub-title">Email xác nhận đã được gửi tới hộp thư của bạn. Hãy kiếm tra email và làm theo hướng dẫn!</h2>
+            }
+            else
+            {
+            <h2 class="sub-title">Gửi mail xác nhận không thành công vì có lỗi xảy ra trong quá trình xử lý. Chúng tôi sẽ khắc phục sự cố trong thời gian sớm nhất. Jammi chân thành xin lỗi bạn vì sự cố này!</h2>
+            }
+        }
+        @if (ViewBag.NotExistEmail != null)
+        {
+            <h2 class="sub-title">Email này chưa được đăng ký! hãy <a href="@Url.Action("Register")">đăng ký</a> để trở thành thành viên của Jammi.vn ngay bây giờ.</h2>
+        }
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Pii.Areas.CargoShip.Models.JourneySupervision>
+@{
+    ViewBag.Title = "Biểu đồ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="title1 graph">@ViewBag.shipName</div>
+<div class="title1 graph">@ViewBag.tripId</div>
+<div class="clear"></div>
+<div id="tab">
+    <table id="detail-table">
+        <tbody>
+            <tr>
+                <th>Công việc</th>
+                <th>Thời gian</th>
+                <th>Vị trí</th>
+                <th>Trạng thái</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@{Write(item.Task != null ? item.Task.TaskName : "");}</td>
+                    <td>@{ Html.Display(item.CreatedDate.HasValue ? item.CreatedDate.Value.ToString("dd/MM/yyyy") : "");}</td>
+                    <td>@item.Position</td>
+                    <td>@{Write(item.State != null ? item.State.StateName : "");}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <div class="title1 graph">TÓM TẮT TÌNH HÌNH CẢNG XẾP</div>
+</div>

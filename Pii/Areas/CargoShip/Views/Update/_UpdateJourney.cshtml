@@ -1,0 +1,59 @@
+﻿@model Pii.Areas.CargoShip.ViewModel.UpdateViewModel
+@using Pii.Areas.CargoShip.Models
+<div class="content1">
+    <ul>
+        <li>Chuyến hiện tại:
+                @Html.DisplayFor(prop => prop.CurrentTripId)
+            @Html.HiddenFor(prop=>prop.CurrentTripId)
+        </li>
+        <li class="journey-starttime">Ngày bắt đầu: 
+            <span> @{Write(Model.CurrentStartTime.HasValue ? Model.CurrentStartTime.Value.ToString("dd/MM/yyyy") : "");}</span>
+        </li>
+        <li>Đi từ: 
+            @Html.DisplayFor(p => p.AvailableNations.FirstOrDefault(m => m.NationId == Model.StartNationId).NationName)
+        </li>
+        <li>Đến: 
+            @Html.DisplayFor(p => p.AvailableNations.FirstOrDefault(m => m.NationId == Model.StopNationId).NationName)
+        </li>
+    </ul>
+</div>
+<div class="clear"></div>
+
+<div class="content2">
+    <div class="title2">
+        <div class="gachchan">Cập nhật chi tiết chuyến</div>
+    </div>
+    <div class="route-detail">
+       Số hợp đồng:  @Html.DisplayFor(p=>Model.ContractNumber,new { @class = "contract-number"})
+        <div class="clear"></div>
+        <div class="update-trip-list">
+            <div class="update-trip">
+                @foreach (var item in Model.Logs)
+                {
+                    
+                
+                <div class="category route-item">
+Loại hàng:
+                    @Html.DisplayFor(p=>item.Category)
+                </div>
+                <div class="weight route-item">
+                   Khối lượng: @Html.DisplayFor(p=>item.Weight)
+                </div>
+                <div class="start-port route-item">
+                   Cảng xếp hàng: @Html.DisplayFor(p => item.StartPort)
+                </div>
+                <div class="stop-port route-item">
+                 Cảng dỡ hàng: 
+                    @Html.DisplayFor(p => item.StopPort)
+                </div>
+                <div class="clear"></div>
+                }
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="route-footer">
+           @* <a href="#" class="add-more">Thêm</a>*@
+        </div>
+    </div>
+</div>

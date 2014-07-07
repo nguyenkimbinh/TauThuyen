@@ -1,0 +1,89 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model PagedList<Pii.Areas.Accounts.Models.UserProfile>
+@{
+    ViewBag.Title = "User account list";
+    ViewBag.MenuId = "user-account";
+    int i = 1;
+}
+
+<div class="pages manage-users">
+    <h2>@ViewBag.HeadTitle</h2>
+    <div class="validation-summary-errors">
+        <ul>
+            <li>@ViewBag.Message</li>
+        </ul>
+    </div>
+    <table>
+        <tr>
+            <th>Order
+            </th>
+            <th>Email Address
+            </th>
+            <th>FirstName
+            </th>
+            <th>LastName
+            </th>
+            <th>Is Lock?
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @i
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsLock)
+                </td>
+                <td>
+                    @Html.ActionLink("View info", "view", new { id = item.UserId })
+                </td>
+            </tr>
+            i++;
+        }
+
+    </table>
+    <div class="paging">
+        @Html.Pager(Model, new PagerOptions()
+    {
+        PageIndexParameterName = "page",
+        PrevPageText = "<",
+        LastPageText = "",
+        NextPageText = ">",
+        FirstPageText = ""
+    })
+    </div>
+</div>
+@section Buttons{
+    @Html.ActionLink("Create", "register", "manage", new { area = "accounts" }, new { @class = "addnew" })
+    @Html.ActionLink("Account list", "index", "manage", new { area = "accounts" },null)
+}
+
+@section SearchBox{
+    <div class="search-user">
+        @using (Html.BeginForm())
+        {
+            <input type="text" name="userName" value="@ViewBag.UserName" />
+            <input type="submit" value="Search" class="buttons" />
+        }
+    </div>
+}
+@section scripts{
+    <script src="~/Scripts/jquery.watermark.js"></script>
+    <script>
+        $(".search-box .search-user input[type=text]").watermark("Email");
+    </script>
+}

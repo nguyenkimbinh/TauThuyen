@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Registration";
+}
+<div class="content bg-content-1">
+    <div class="bg-content">
+        <h1 class="h1-title-news">Đăng ký thành công</h1>
+        <div class="body-text">
+            @if (ViewBag.Message == true)
+            {
+                <h2 class="sub-title">Email xác nhận đã được gửi tới hộp thư của bạn. Kiểm tra email, và làm theo hướng dẫn. Cảm ơn bạn!</h2>
+            }
+            else
+            {
+                <h2 class="sub-title">Đăng ký không thành công vì có lỗi xảy ra trong quá trình xử lý. Chúng tôi sẽ khắc phục sự cố trong thời gian sớm nhất!</h2>    
+            }
+        </div>
+    </div>
+</div>

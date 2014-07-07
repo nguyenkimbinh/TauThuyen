@@ -1,0 +1,36 @@
+﻿@model Pii.Areas.CargoShip.Models.Note
+@{
+    ViewBag.Title = "Modify";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Pii.Areas.CargoShip.Models
+<div class="modify-container">
+    @using (Html.BeginForm("NModify", "Update", FormMethod.Post))
+    {
+        @Html.HiddenFor(p => p.NoteId)
+        @Html.HiddenFor(p => p.ShipId)
+        @Html.HiddenFor(p => p.TripId)
+        <div class="field">
+            Tàu: 
+        <p>@Model.Ship.ShipName</p>
+        </div>
+        <div class="field">
+            Mã chuyến:
+        <p>@Model.TripId</p>
+        </div>
+        <div class="field">
+            Nội dung: @Html.TextAreaFor(p=>p.NoteContent)
+        </div>
+        <input type="submit" name="name" value="Xác nhận" />
+    }
+    <div class="remove-record">
+        @using (Html.BeginForm("Delete", "Update", FormMethod.Post))
+        {
+            @Html.Hidden("id", Model.NoteId)
+            @Html.Hidden("shipId", Model.ShipId)
+            @Html.Hidden("tripId", Model.TripId)
+            @Html.Hidden("key", 3)
+            <input type="submit" name="name" value="Xóa cập nhật" />
+        }
+    </div>
+</div>

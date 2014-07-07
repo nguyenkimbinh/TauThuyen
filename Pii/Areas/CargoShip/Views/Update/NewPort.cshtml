@@ -1,0 +1,36 @@
+﻿@model Pii.Areas.CargoShip.Models.Port
+@{
+    ViewBag.Title = "Thêm cảng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thêm cảng</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div class="editor-label">
+        Tên cảng
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.PortName)
+        @Html.ValidationMessageFor(model => model.PortName)
+    </div>
+    <div class="editor-label">
+        Chọn quốc gia
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(model => model.NationId, ((IEnumerable<Pii.Areas.CargoShip.Models.Nation>)ViewBag.PossibleNations).Select(option => new SelectListItem
+{
+    Text = (option == null ? "Rỗng" : option.NationName),
+    Value = option.NationId.ToString(),
+    Selected = (Model != null) && (option.NationId == Model.NationId)
+}), "Chọn...")
+        @Html.ValidationMessageFor(model => model.NationId)
+    </div>
+    <input type="hidden" value="@ViewBag.shipId" name="shipId" />
+    <input type="hidden" value="@ViewBag.tripId" name="tripId" />
+    <p>
+        <input type="submit" value="Thêm" />
+    </p>
+}

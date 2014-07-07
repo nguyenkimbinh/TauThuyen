@@ -1,0 +1,13 @@
+﻿body { font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif; color: #5e5e5e; font-weight: 100; background: url(/Areas/Admin/images/bg.gif); }
+#wrapper { width: 365px; margin: auto; border: 1px solid #c1c1c1; margin-top: 150px; padding-bottom: 30px; background: #FFF; }
+#logon { padding: 35px; }
+.title { font-size: 25px; padding: 0 0 5px 0; border-bottom: 2px solid #1570a6; font-weight: 100; margin: 0; margin-bottom: 5px; }
+input[type='text'], input[type='password'] { height: 24px; border: 1px solid #c1c1c1; width: 288px; margin: 5px 0; padding-left: 5px; border-radius: 3px; }
+.button { border: none; color: #fff; font-size: 15px; margin: 0; padding: 7px 12px; background: #1570a6; background: -webkit-gradient(linear, left top, left bottom,from(#2f99d8),to(#1570a6)); -webkit-text-shadow: 0px 0px 1px #d8d8d8; text-shadow: 0px 0px 1px #d8d8d8; border-radius: 2px; cursor: pointer; }
+    .button:hover, button:active { bottom: 1px; position: relative; }
+.w-buttons { text-align: right; margin-top: 5px; }
+.line { border-bottom: 2px solid #1570a6; position: relative; }
+    .line span { position: absolute; top: -16px; right: 44px; font-size: 14px; color: #1570a6; padding: 5px 10px; background: #fff; }
+.field-validation-error { color: red; font-size: 11px; }
+.validation-summary-errors ul { font-size: 11px; color: red; padding-left: 15px; }
+input[type='text'].input-validation-error, input[type='password'].input-validation-error { border-color: red; }

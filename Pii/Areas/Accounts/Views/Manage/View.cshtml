@@ -1,0 +1,30 @@
+﻿@model Pii.Areas.Accounts.Models.UserProfile
+@{
+    ViewBag.Title = Model.UserName;
+    ViewBag.MenuId = "manageusers";
+}
+<div class="pages view-info-user small-page">
+    <h1>@Model.UserName's infomation</h1>
+    <div class="info">
+        <table>
+            <tr>
+                <td>User name:</td>
+                <td>@Model.UserName</td>
+            </tr>
+            <tr>
+                <td>Quyền:</td>
+                <td>@Model.GetRole().ToString()</td>
+            </tr>
+        </table>
+    </div>
+    <div class="actions">
+        <div class="item">
+            @using (Html.BeginForm("Delete", "Manage"))
+            {
+                @Html.HiddenFor(m => m.UserId)
+                <input type="submit" class="buttons" value="Delete" onclick="if (!confirm('Delete user!?')) return false;" />
+            }
+        </div>
+
+    </div>
+</div>

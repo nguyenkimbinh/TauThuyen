@@ -1,0 +1,203 @@
+﻿@model Pii.Areas.CargoShip.ViewModel.RouteModel
+@using Pii.Models
+
+<div class="home-route">
+    <h2>@ViewBag.ship</h2>
+    <h2>Ngày: @{Write(Request.QueryString["date"]==""? DateTime.Now.ToString("dd/MM/yyyy"):Request.QueryString["date"]);}</h2>
+        <div class="title2">
+        <div class="gachchan">Chi tiết hành trình</div>
+    </div>
+    <table id="detail-table">
+        <tr>
+            <td>
+                <b>Ngày</b>
+            </td>
+            <td>
+                <b>Giờ</b>
+            </td>
+                   <td>
+                <b>Quốc gia</b>
+            </td>
+            <td><b>Tên cảng</b>
+            </td>
+            <td>
+                <b>Vị trí</b>
+            </td>
+            <td>
+                <b>Loại hàng</b>
+            </td>
+
+            <td>
+                <b>Đầu việc</b>
+            </td>
+          
+            <td>
+                <b>Chi tiết CV</b>
+            </td>
+       
+            <td>
+                <b>Kết quả</b>
+            </td>
+        </tr>
+        <tbody id="detail-tbody">
+            @if (Model.JourneySupervisions != null)
+            {
+                foreach (var item in Model.JourneySupervisions)
+                {
+                <tr class="nen">
+
+
+                    <td>@{Write(item.CreatedDate.HasValue ? item.CreatedDate.Value.ToString("dd/MM/yyyy") : "");}</td>
+                    <td>@{Write(item.CreatedDate.HasValue ? item.CreatedDate.Value.ToShortTimeString() : "");}</td>
+                    <td>@item.NationName</td>
+                    <td>@{Write(item.Port != null ? item.Port.PortName : "");}</td>
+                    <td>@{Write(item.Position);}</td>
+                    <td>@item.CategoryName</td>
+                    <td>@item.Task.TaskName</td>
+                    <td>@{Write(item.State != null ? item.State.StateName : "");}</td>
+                    
+                    <td class="last-td">@{if (item.StateId == ConstId.LoadingStateId || item.StateId == ConstId.LoadedStateId || item.StateId == ConstId.UnloadedStateId || item.StateId == ConstId.UnloadingStateId || item.StateId == ConstId.RefueledId)
+                                          {
+                                              WriteLiteral("Làm:" + item.ArrangedWeight + "      <span>Còn:" + (item.RestWeight) + "<span>");
+                                          }
+                    }
+                    </td>
+                </tr>
+                }
+            }
+        </tbody>
+
+    </table>
+    
+    <div class="clear"></div>
+    <div class="title2">
+        <div class="gachchan">Bảng dự kiến</div>
+    </div>
+    <table id="journeyplan-table">
+        <tr>
+            <td><b>Mã dự kiến</b>
+            </td>
+            <td><b>Tên dự kiến</b>
+            </td>
+            <td><b>Tên cảng</b>
+            </td>
+            <td>
+                <b>Ngày</b>
+            </td>
+            <td><b>Kết quả</b>
+            </td>
+        </tr>
+        <tbody id="journeyplan-tbody">
+            @if (Model.JourneyPlans != null)
+            {
+                foreach (var item in Model.JourneyPlans)
+                {
+                    if (item.Port != null || item.PlanId != null || item.PlanTime != null)
+                    {
+                        var temp = Model.Results.FirstOrDefault(p => p.ShipId == item.ShipId && p.TripId == item.TripId && p.PlanId == item.PlanId);
+                <tr class="nen">
+                    <td>@item.PlanId</td>
+                    <td>@item.Plan.PlanName</td>
+                    <td>@{Write(item.PortId.HasValue ? item.Port.PortName : "");}</td>
+                    <td>@{Write(item.PlanTime.HasValue ? item.PlanTime.Value.ToString("dd/MM/yyyy") : "");}</td>
+
+                    @if (temp != null)
+                    {
+                        <td>Thực tế: @{Write(temp.JourneyDate.HasValue ? temp.JourneyDate.Value.ToString("dd/MM/yyyy") : "");}- @temp.Remark
+                            <br />
+                            Lý do: @{Write(temp.Reson != null ? temp.Reson.ResonName : "");}
+                        </td>
+                    }
+                    else
+                    {<td></td>}
+                </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+
+    <div class="title2">
+        <div class="gachchan">Bảng ghi chú</div>
+    </div>
+    <table id="note-table">
+        <tr>
+            <td><b>Ngày</b>
+            </td>
+            <td><b>Ghi chú</b>
+            </td>
+        </tr>
+        <tbody id="note-tbody">
+            @if (Model.Notes != null)
+            {
+                foreach (var item in Model.Notes)
+                {
+                    if (item.CreatedDate != null || string.IsNullOrEmpty(item.NoteContent))
+                    {
+                <tr class="nen">
+                    <td>@{Write(item.CreatedDate.HasValue ? item.CreatedDate.Value.ToString("dd/MM/yyyy") : "");}</td>
+                    <td>@item.NoteContent</td>
+                </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<script>
+    function selectedNations(data) {
+        $('.start-nation').text(data.startNation == null ? "" : data.startNation);
+        $('.stop-nation').text(data.stopNation == null ? "" : data.stopNation);
+        $('.start-time').text(data.startTime == null ? "" : data.startTime);
+        $('.tripidhidden').val(data.tripId);
+    }
+    function filterRoute(data) {
+        $('#detail-tbody').remove();
+        $('#journeyplan-tbody').remove();
+        $('#note-tbody').remove();
+        $('#detail-table').append('<tbody id="detail-tbody"></tbody>');
+        $('#journeyplan-table').append('<tbody id="journeyplan-tbody"></tbody>');
+        $('#note-table').append('<tbody id="note-tbody"></tbody>');
+        $.each(data.ar1, function (i, item) {
+            $('#detail-tbody').append('<tr class="nen">'
+                        + '<td>' + item.Date + '</td>'
+                        + '<td>' + item.Time + '</td>'
+                        + '<td>' + item.nationName + '</td>'
+                        + '<td>' + item.PortName + '</td>'
+                        + '<td>' + item.Position + '</td>'
+                        + '<td>' + item.CategoryName + '</td>'
+                        + '<td>' + item.TaskName + '</td>'
+                        + '<td>' + item.StateName + '</td>'
+                        
+                        + '<td class="last-td>' + item.result + '</td>'
+                        + '<td>' + '<a class="modify" href="/Update/Modify?jnId' + item.id + '" title="Cập nhật: ' + item.Date + ' Bởi: Alin"></a>' + '</td>'
+                    + '</tr>');
+        });
+        $.each(data.ar3, function (i, item) {
+            $('#journeyplan-tbody').append('<tr class="nen">'
+                        + '<td>' + item.planId + '</td>'
+                        + '<td>' + item.planName + '</td>'
+                        + '<td>' + item.portName + '</td>'
+                        + '<td>' + item.createdDate + '</td>'
+                          + '<td> Thực tế:' + item.journeyTime + " - " + item.ssresult + "</br> Lý do: " + item.reson + '</td>'
+            + '<td>' + '<a class="modify" href="/Update/Modify?plId=' + item.id + '" title="Cập nhật: ' + item.createdDate + ' Bởi: Alin"></a>' + '</td>'
+        + '</tr>');
+        });
+        $.each(data.ar2, function (i, item) {
+            $('#note-tbody').append('<tr class="nen">'
+                        + '<td>' + item.createdDate + '</td>'
+                        + '<td>' + item.note + '</td>'
+            + '<td>' + '<a class="modify" href="/Update/Modify?noteid=' + item.NoteId + '" title="Cập nhật: ' + item.createdDate + ' Bởi: Alin"></a>' + '</td>'
+                    + '</tr>');
+        });
+    }
+    $('.detail-view').click(function () { $(this).attr('href', '?shipId=' + $('.shipidview').val() + '&tripId=' + $('.tripidhidden').val() + '&all=true&currentTrip=true') });
+    $('.graph-view').click(function () {
+        var url = $(this).attr('href');
+        if (url.indexOf('&tripId') >= 0) {
+            url = url.substr(0, url.indexOf('&tripId'));
+        }
+        $(this).attr('href', url + '&tripId=' + $('.tripidhidden').val())
+    });
+</script>
+

@@ -1,0 +1,68 @@
+﻿@model Pii.Areas.Accounts.Models.AdminRegister
+@{
+    ViewBag.Title = "Register";
+    ViewBag.MenuId = "user-account";
+}
+
+<h2>Create account</h2>
+
+@using (Html.BeginForm("register", "manage", FormMethod.Post, new { id = "PropertyForm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)  
+    <div class="editor-label">
+        <label for="First_name">First name:</label>
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.FirstName)
+        @Html.ValidationMessageFor(m => m.FirstName)
+    </div>
+    
+    <div class="editor-label">
+        <label for="Last_name">Last name:</label>
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.LastName)
+        @Html.ValidationMessageFor(m => m.LastName)
+    </div>
+    
+    <div class="editor-label">
+        <label for="Email">Email:</label>
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.Email)
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+    
+    <div class="editor-label">
+        <label for="Password">Password:</label>
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.Password)
+        @Html.ValidationMessageFor(m => m.Password)
+    </div>
+    
+    <div class="editor-label">
+        <label for="Confirm_password">Confirm password:</label>
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(m => m.ConfirmPassword)
+        @Html.ValidationMessageFor(m => m.ConfirmPassword)
+    </div>
+    
+    <div class="editor-label">
+        <label for="Role">Role:</label>
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(m => m.Role, ((string[])ViewBag.Roles).Select(option => new SelectListItem
+   {
+       Text = Html.DisplayTextFor(_ => option).ToString(),
+       Value = option,
+       Selected = (Model != null) && Model.Role == option
+   }))
+        @Html.ValidationMessageFor(m => m.Role)
+    </div>
+    
+    
+    <input type="submit" value="Save" />
+}

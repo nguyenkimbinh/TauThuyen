@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Quản lý file";
+    ViewBag.menuid = "quan_ly_file";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        var config = {};
+        config.height = '600';
+        var ckfinder = new CKFinder(config);
+        ckfinder.replace('ckfinder', config);
+    });
+</script>
+<script type="text/javascript" src="@Url.Content("/Areas/Admin/Scripts/ckfinder/ckfinder.js")"></script>
+<h2>Quản lý tài liệu - hình ảnh</h2>
+<div id="ckfinder"></div>

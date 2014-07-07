@@ -1,0 +1,127 @@
+﻿@model Pii.Areas.CargoShip.ViewModel.ReportViewModel
+@{
+    ViewBag.Title = "Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="report-content">
+
+    @using (Html.BeginForm("ExportReport", "Home"))
+    {
+        <div class="report-block">
+            <div class="report-header">TÓM TẮT TÌNH HÌNH CẢNG XẾP</div>
+            <div class="report-field">
+                Tên cảng 
+            @Html.EditorFor(p => p.OnLoadReport.PortName)
+            </div>
+            <div class="report-field">
+                Hàng hóa
+            @Html.EditorFor(p => p.OnLoadReport.Goods)
+            </div>
+            <div class="report-field">
+                Thời gian tàu đến
+            @Html.EditorFor(p => p.OnLoadReport.PortComeDate)
+            </div>
+            <div class="report-field">
+                Mổn tàu đến
+            @Html.EditorFor(p => p.OnLoadReport.ComingCube)
+            </div>
+            <div class="report-field">
+                Thời gian cập cầu
+            @Html.EditorFor(p => p.OnLoadReport.PortComeTime)
+            </div>
+            <div class="report-field">
+                Thời gian bắt đầu xếp hàng
+            @Html.EditorFor(p => p.OnLoadReport.LoadingTime)
+            </div>
+            <div class="report-field">
+                Thời gian hoàn thành xếp hàng
+            @Html.EditorFor(p => p.OnLoadReport.LoadingComplTime)
+            </div>
+            <div class="report-field">
+                Thời gian tàu rời càng
+            @Html.EditorFor(p => p.OnLoadReport.LeavingCube)
+            </div>
+            <input type="submit" name="name" value="Xuất báo cáo" class="report-submit" />
+            @Html.Hidden("reportType", 1)
+            @Html.Hidden("shipId", (int)ViewBag.shipId)
+            @Html.Hidden("tripId", (string)ViewBag.tripId)
+        </div>
+    }
+    @using (Html.BeginForm("ExportReport", "Home"))
+    {
+        <div class="report-block">
+            <div class="report-header">TÓM TẮT TÌNH HÌNH CẢNG DỠ</div>
+            <div class="report-field">
+                Tên cảng 
+            @Html.EditorFor(p => p.UnloadReport.PortName)
+            </div>
+            <div class="report-field">
+                Hàng hóa
+            @Html.EditorFor(p => p.UnloadReport.Goods)
+            </div>
+            <div class="report-field">
+                Thời gian tàu đến
+            @Html.EditorFor(p => p.UnloadReport.PortComeDate)
+            </div>
+            <div class="report-field">
+                Mổn tàu đến
+            @Html.EditorFor(p => p.UnloadReport.ComingCube)
+            </div>
+            <div class="report-field">
+                Thời gian cập cầu
+            @Html.EditorFor(p => p.UnloadReport.PortComeTime)
+            </div>
+            <div class="report-field">
+                Thời gian bắt đầu dỡ hàng
+            @Html.EditorFor(p => p.UnloadReport.LoadingTime)
+            </div>
+            <div class="report-field">
+                Thời gian hoàn thành dỡ hàng
+            @Html.EditorFor(p => p.UnloadReport.LoadingComplTime)
+            </div>
+            <div class="report-field">
+                Thời gian tàu rời càng
+            @Html.EditorFor(p => p.UnloadReport.LeavingCube)
+            </div>
+            <input type="submit" name="name" value="Xuất báo cáo" class="report-submit" />
+            @Html.Hidden("reportType", 2)
+            @Html.Hidden("shipId", (int)ViewBag.shipId)
+            @Html.Hidden("tripId", (string)ViewBag.tripId)
+        </div>
+    }
+    @using (Html.BeginForm("ExportReport", "Home"))
+    {
+        <div class="report-block">
+            <div class="report-header">TRANSIT/BUNKERING/DEVIATION</div>
+            <div class="report-field">
+                Tên cảng 
+            @Html.EditorFor(p => p.UnsualReport.PortName)
+            </div>
+            <div class="report-field">
+                Mục đích
+            @Html.EditorFor(p => p.UnsualReport.Purpose)
+            </div>
+            <div class="report-field">
+                Thời gian tàu đến
+            @Html.EditorFor(p => p.UnsualReport.ComingDate)
+            </div>
+            <div class="report-field">
+                Thời gian bắt đầu
+            @Html.EditorFor(p => p.UnsualReport.StartTime)
+            </div>
+            <div class="report-field">
+                Thời gian kết thúc
+            @Html.EditorFor(p => p.UnsualReport.FinishTime)
+            </div>
+            <div class="report-field">
+                Thời gian tàu chạy
+            @Html.EditorFor(p => p.UnsualReport.RunTime)
+            </div>
+            <input type="submit" name="name" value="Xuất báo cáo" class="report-submit" />
+            @Html.Hidden("reportType", 3)
+            @Html.Hidden("shipId", (int)ViewBag.shipId)
+            @Html.Hidden("tripId", (string)ViewBag.tripId)
+        </div>
+    }
+</div>
