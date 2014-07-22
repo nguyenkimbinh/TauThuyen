@@ -1,0 +1,18 @@
+﻿.form-action { border: 1px solid #cecece; margin: 5px; padding: 10px 20px; }
+.pages.register-page { }
+
+    .pages.register-page table, .pages.register-page td { border: none; width: auto; }
+    .pages.register-page td { vertical-align: top; }
+.register-page td.first { font-weight: bold; text-align: right; vertical-align: middle; }
+.register-page h1 { font-size: 20px; color: #0072c6; }
+.register-page .row { margin-bottom: 10px; }
+    .register-page .row label { width: 125px; float: left; text-align: right; padding: 3px 10px; }
+
+.register-page input[type='text'], .register-page input[type='password'], .register-page input[type='email'] { margin-bottom: 0; }
+.pages.register-page .wrapper-submit { padding-left: 253px; }
+.register-page table label { display: block; }
+.register-page .row img { float: left; width: 210px; height: 26px; border: 1px solid #cecece; }
+#xcaptcha_refresh { float: left; width: 45px; padding: 4px; min-width: initial;margin-left:4px; }
+.register-page .input-validation-error { border-color: red; }
+
+.view-info-user .actions { margin: 5px 0; }

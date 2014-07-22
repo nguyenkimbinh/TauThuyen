@@ -1,0 +1,105 @@
+﻿@model Pii.Areas.CargoShip.Models.JourneySupervision
+@{
+    ViewBag.Title = "Modify";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string modify = ViewBag.modify;
+}
+@using Pii.Areas.CargoShip.Models
+<div class="modify-container">
+    @using (Html.BeginForm("Modify", "Update", FormMethod.Post))
+    {
+        @Html.HiddenFor(p => p.Id)
+        @Html.HiddenFor(p => p.ShipId)
+        @Html.HiddenFor(p => p.TripId)
+        @Html.Hidden("oldTime",Model.CreatedDate)
+        @Html.Hidden("modify",modify)
+        <div class="field">
+            Tàu: 
+        <p>@Model.Ship.ShipName</p>
+        </div>
+        <div class="field">
+            Mã chuyến:
+        <p>@Model.TripId</p>
+        </div>
+        <div class="field">
+            Cảng: 
+         @Html.DropDownListFor(model => model.PortId, ((IEnumerable<Port>)ViewBag.availablePorts).Select(option => new SelectListItem
+{
+    Text = (option == null ? "Không có" : option.PortName),
+    Value = option.PortId.ToString(),
+    Selected = (Model.PortId != null) && (option.PortId == Model.PortId)
+}), "", new { @class = "dropdown-list" })
+        </div>
+        <div class="field">
+            Công việc: 
+         @Html.DropDownListFor(model => model.TaskId, ((IEnumerable<Task>)ViewBag.availableTasks).Select(option => new SelectListItem
+{
+    Text = (option == null ? "Không có" : option.TaskName),
+    Value = option.TaskId.ToString(),
+    Selected = (Model.TaskId != null) && (option.TaskId == Model.TaskId)
+}), "", new { @class = "dropdown-list" })
+        </div>
+        <div class="field">
+            Trạng thái: 
+         @Html.DropDownListFor(model => model.StateId, ((IEnumerable<State>)ViewBag.availableStates).Select(option => new SelectListItem
+{
+    Text = (option == null ? "Không có" : option.StateName),
+    Value = option.StateId.ToString(),
+    Selected = (Model.StateId != null) && (option.StateId == Model.StateId)
+}), "", new { @class = "dropdown-list" })
+        </div>
+         <div class="field">
+            Vị trí:
+            @Html.TextBoxFor(p=>p.Position)
+        </div>
+         <div class="field">
+            Loại hàng:
+            @Html.DropDownListFor(model => model.CategoryName, ((IEnumerable<Category>)ViewBag.availableCategories).Select(option => new SelectListItem
+{
+    Text = (option == null ? "Không có" : option.CategoryName),
+    Value = option.CategoryName.ToString(),
+    Selected = (Model.CategoryName != null) && (option.CategoryName == Model.CategoryName)
+}), "", new { @class = "dropdown-list" })
+        </div>
+        <div class="field">
+            Khối lượng đã làm:
+            @Html.TextBoxFor(p=>p.ArrangedWeight)
+        </div>
+         <div class="field">
+            Khối lượng còn lại:
+            @Html.TextBoxFor(p=>p.RestWeight)
+        </div>
+        <div class="field">
+            Thời gian: 
+        @Html.TextBoxFor(p => p.Time, new { @class = "tab1-time" })
+            @Html.TextBoxFor(p => p.Date, new { @class = "datepicker" })
+        </div>
+        <input type="submit" name="name" value="Xác nhận" />
+    }
+    <div class="remove-record">
+        @using (Html.BeginForm("Delete", "Update", FormMethod.Post))
+        {
+            @Html.Hidden("id",Model.Id)
+            @Html.Hidden("shipId",Model.ShipId)
+            @Html.Hidden("tripId",Model.TripId)
+            @Html.Hidden("key",1)
+            <input type="submit" name="name" value="Xóa cập nhật" />
+        }
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $(".datepicker, .tab-time input, li.journey-starttime input").datepicker({
+            showButtonPanel: false,
+            dateFormat: 'dd/mm/yy',
+            altField: 'this',
+            altFormat: 'mm/dd/yy',
+            beforeShow: function () {
+                $(".ui-datepicker").css('font-size', 12)
+            }
+        });
+        $('.tab1-time').timepicker();
+    });
+
+</script>

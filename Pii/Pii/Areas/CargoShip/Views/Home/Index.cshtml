@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Pii.Areas.CargoShip.ViewModel.HomeViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+
+<div class="title1">Tình hình đội tàu</div>
+
+@using (Html.BeginForm("Index", "Home", new { Area = "CargoShip" }, FormMethod.Post,null))
+{
+    <div class="date-range">
+        Chọn thời điểm
+    <span>Ngày: </span>
+        <input type="text" name="pickedDate" value="@ViewBag.pickedDate" class="datepicker" />
+        <input type="submit" name="name" value="Chọn" />
+    </div>
+}
+<div id="tab" class="index-page">
+    <table>
+        <tbody>
+            <tr>
+                <td><b>STT</b></td>
+                <td class="tentau"><b>Tên tàu</b></td>
+                <td><b>Chuyến</b></td>
+                <td><b>Ngày bắt đầu</b></td>
+                <td><b>Từ/Đến</b></td>
+                <td><b>Vị trí/Trạng thái hiện tại</b></td>
+                <td><b>Xem chi tiết</b></td>
+                @if (!Roles.IsUserInRole("Staff"))
+                {
+                    <td><b>Cập nhập thông tin</b></td>
+                }
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr class="nen">
+                    <td>@i</td>
+                    <td><a href="@Url.Action("Detail", "Home", new { Area = "CargoShip", @shipId = item.ShipId, @tripId = item.TripId, @all = false, @currentTrip = false }, null)">@item.ShipName</a></td>
+                    @*<td class="tentau"><a @if (item.ShipName==ViewBag.ship && ViewBag.ship!=null)
+	{
+        Write("style=color:red;"); 
+	} href="@Url.Action("HomeRoute", "Home", new { Area = "CargoShip", @shipId = item.ShipId, @date=Request.QueryString["date"]}, null)">@item.ShipName</a></td>*@
+                    <td>@item.TripId</td>
+                    <td>@Html.Label(item.StartDate.HasValue ? item.StartDate.Value.ToString("dd-MM-yyyy") : "")</td>
+                    <td>@item.FromTo</td>
+                    <td>@item.CurPosAndState</td>
+                    <td><a href="@Url.Action("Detail", "Home", new { Area = "CargoShip", @shipId = item.ShipId, @tripId = item.TripId, @all = false, @currentTrip = false }, null)">Click để xem</a></td>
+                    @if (!Roles.IsUserInRole("Staff"))
+                    {
+                        <td><a href="@Url.Action("Index", "Update", new { Area = "CargoShip", @shipId = item.ShipId, @tripId = item.TripId, @startTime = item.StartDate }, null)">Cập nhập</a></td>
+                    }
+                </tr>
+                    i++;
+            }
+        </tbody>
+    </table>
+    @*@if (ViewBag.homeRoute!=null)
+{
+    Html.RenderPartial("_RouteView", ViewBag.homeRoute as Pii.Areas.CargoShip.ViewModel.RouteModel);
+}*@
+</div>
+
+<script>
+    $(function () {
+        $(".datepicker, .tab-time input, li.journey-starttime input").datepicker({
+            showButtonPanel: false,
+            dateFormat: 'dd/mm/yy',
+            altField: 'this',
+            altFormat: 'mm/dd/yy',
+            beforeShow: function () {
+                $(".ui-datepicker").css('font-size', 12)
+            }
+        });
+    });
+
+</script>

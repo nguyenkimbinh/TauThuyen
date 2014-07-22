@@ -1,0 +1,575 @@
+﻿@model Pii.Areas.CargoShip.ViewModel.DetailViewModel
+@{
+    ViewBag.Title = "Chi tiết";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //int max = 0;
+    var dayCollection = new Dictionary<DateTime, int>();
+    DateTime? fromDate = ViewBag.fromDate;
+    DateTime? toDate = ViewBag.toDate;
+}
+@using Pii.Areas.CargoShip.Models
+@using Pii.Models;
+@helper Getdate(DateTime? date)
+{ 
+    if (date.HasValue)
+    {
+    @date.Value.ToString("dd/MM/yyyy");
+    }
+    else
+    {
+    <text></text>
+    }
+}
+<link href="/content/atooltip.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.atooltip.js"></script>
+<div class="title1">@Model.Ship.ShipName</div>
+<div class="clear"></div>
+<div class="content1">
+    @Html.Hidden("tripId", Model.SelectedTripId, new { @class = "tripidhidden" })
+    @using (Ajax.BeginForm("ChangeTrip", "Home", new { Area = "CargoShip" }, new AjaxOptions { OnSuccess = "selectedNations" }, null))
+    {
+        @Html.Hidden("shipId", Model.Ship.ShipId, new { @class = "shipidview" })
+        <ul class="detail-nav">
+            <li>Chuyến:
+            @if (ViewBag.currentTrip)
+            {
+                <span>@Model.SelectedTripId</span>
+                Html.HiddenFor(p => p.SelectedTripId);
+            }
+            else
+            {
+                @Html.DropDownListFor(model => model.SelectedTripId, ((IEnumerable<Journey>)Model.Journeys).Select(option => new SelectListItem
+           {
+               Text = (option == null ? "Không có" : option.TripId),
+               Value = option.TripId,
+               Selected = (Model != null) && (option.TripId == Model.SelectedTripId)
+           }), null, new { @class = "dropdown-list", @onchange = "$(this).closest('form').submit();" })}
+            </li>
+            <li>Đi từ:
+						<span style="color: #0066CC" class="start-nation">@Model.Journeys.FirstOrDefault(p => p.TripId == Model.SelectedTripId).StartNationName</span>
+            </li>
+            <li>Đến:
+						<span style="color: #0066CC" class="stop-nation">@Model.Journeys.FirstOrDefault(p => p.TripId == Model.SelectedTripId).StopNationName</span>
+            </li>
+            <li>Từ ngày:
+						<span style="color: #0066CC" class="start-time">@{Write(Model.Journeys.FirstOrDefault(p => p.TripId == Model.SelectedTripId).StartDate.HasValue ? Model.Journeys.FirstOrDefault(p => p.TripId == Model.SelectedTripId).StartDate.Value.ToString("dd/MM/yyyy") : "");}</span>
+            </li>
+            <li>Ngày kết thúc:
+						<span style="color: #0066CC" class="start-time">@{Write(Model.Journeys.FirstOrDefault(p => p.TripId == Model.SelectedTripId).EndDate.HasValue ? Model.Journeys.FirstOrDefault(p => p.TripId == Model.SelectedTripId).EndDate.Value.ToString("dd/MM/yyyy") : "");}</span>
+            </li>
+            <li class="detail-nav-1">
+                @Html.ActionLink("Xem toàn bộ chuyến", "Detail", "Home", new { Area = "CargoShip", shipId = Model.Ship.ShipId, all = true, currentTrip = false }, new { @class = "detail-view" })
+            </li>
+            <li class="detail-nav-2">
+                @Html.ActionLink("Xem báo cáo", "Report", "Home", new { Area = "CargoShip", shipId = Model.Ship.ShipId, tripId = Model.SelectedTripId }, new { @class = "graph-view" })
+            </li>
+        </ul> 
+    }
+</div>
+<div class="clear"></div>
+@*@using (Ajax.BeginForm("RouteDetailFilter", "Home", new { Area = "CargoShip" }, new AjaxOptions { OnSuccess = "filterRoute" }, null))
+{ *@
+@using (Html.BeginForm("Detail", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(p => p.Ship.ShipId)
+    @Html.Hidden("tripId", Model.SelectedTripId, new { @class = "tripidhidden" })
+    <div class="content2">
+        <div class="title2">
+            <div class="gachchan">Chi tiết hành trình</div>
+        </div>
+        <ul>
+            <li class="date-range">
+                <input type="text" name="starttime" value="@ViewBag.start" class="datepicker" id="start-date" autocomplete="on" placeholder="Từ ngày" />
+            </li>
+            <li class="date-range">
+                <input type="text" name="stoptime" value="@ViewBag.stop" class="datepicker" id="end-date" placeholder="Đến ngày" autocomplete="on" /></li>
+            <li>
+                @Html.DropDownListFor(model => model.SelectedPortId, ((IEnumerable<Port>)Model.Ports.Distinct()).Select(option => new SelectListItem
+           {
+               Text = (option == null ? "Không có" : option.PortName),
+               Value = option.PortId.ToString(),
+               Selected = (Model != null) && (option.PortId == Model.SelectedPortId)
+           }), "Tên cảng", new { @class = "dropdown-list" })
+            </li>
+            <li>
+                @Html.DropDownListFor(model => model.SelectedTaskId, ((IEnumerable<Task>)Model.Tasks.Distinct()).Select(option => new SelectListItem
+           {
+               Text = (option == null ? "Không có" : option.TaskName),
+               Value = option.TaskId.ToString(),
+               Selected = (Model != null) && (option.TaskId == Model.SelectedTaskId)
+           }), "Đầu việc", new { @class = "dropdown-list" })
+            </li>
+            <li>
+                @Html.DropDownListFor(model => model.SelectedStateId, ((IEnumerable<State>)Model.States.Distinct()).Select(option => new SelectListItem
+           {
+               Text = (option == null ? "Không có" : option.StateName),
+               Value = option.StateId.ToString(),
+               Selected = (Model != null) && (option.StateId == Model.SelectedStateId)
+           }), "Chi tiết CV", new { @class = "dropdown-list" })
+            </li>
+            <li>
+                <button type="submit" onclick="$(this).closest('form').submit();">Xem</button>
+            </li>
+        </ul>
+    </div>
+    @Html.Hidden("shipId", Model.Ship.ShipId)
+    @Html.Hidden("tripId", Model.SelectedTripId)
+    @Html.Hidden("all", false)
+    @Html.Hidden("currentTrip", false)
+}
+<div id="tab" class="detail-tab">
+    <table id="detail-table">
+        <tr>
+            <td>
+                <b>Ngày</b>
+            </td>
+            <td>
+                <b>Giờ</b>
+            </td>
+            <td>
+                <b>Đầu việc</b>
+            </td>
+            <td><b>Tên cảng</b>
+            </td>
+            <td>
+                <b>Chi tiết hành trình</b>
+            </td>
+        </tr>
+        <tbody id="detail-tbody">
+            @{var minDate = Model.JourneySupervisions.OrderBy(p => p.Id).FirstOrDefault();
+              var maxDate = Model.JourneySupervisions.OrderByDescending(p => p.Id).FirstOrDefault();
+              if (minDate != null && maxDate != null)
+              {
+                  var minDateval = minDate.CreatedDate;
+                  var maxDateval = maxDate.CreatedDate;
+                  for (DateTime i = maxDateval.Value; i >= minDateval.Value; i = i.AddDays(-1))
+                  {
+                      try
+                      {
+                          int max = Model.JourneySupervisions.Count(p => p.CreatedDate.Value.Date == i.Date);
+                          max = Math.Max(max, Model.JourneyPlans.Count(p => p.PlanTime.Value.Date == i.Date));
+                          max = Math.Max(max, Model.Notes.Count(p => p.CreatedDate.Value.Date == i.Date));
+                          if (max > 0)
+                          {
+                              dayCollection.Add(i, max);
+                          }
+                      }
+                      catch (Exception)
+                      { }
+                  }
+              }
+            }
+            @{var dayCollections = new List<KeyValuePair<DateTime, int>>();
+              if (!fromDate.HasValue && toDate.HasValue)
+              {
+                  dayCollections = dayCollection.Where(p => p.Key.Date <= toDate.Value.Date).ToList();
+              }
+              else
+                  if (!fromDate.HasValue && !toDate.HasValue)
+                  {
+                      dayCollections = dayCollection.Take(1).ToList();
+                  }
+                  else
+                      if (fromDate.HasValue && !toDate.HasValue)
+                      {
+                          dayCollections = dayCollection.Where(p => p.Key.Date >= fromDate.Value.Date).ToList();
+                      }
+                      else
+                      {
+                          dayCollections = dayCollection.Where(p => p.Key.Date >= fromDate.Value.Date && p.Key.Date <= toDate.Value.Date).ToList();
+                      }
+              
+            }
+            @foreach (var day in dayCollections)
+            {
+                var tempList = Model.JourneySupervisions.Where(p => p.CreatedDate.Value.Date == day.Key.Date);
+                if (tempList != null)
+                {
+                    int count = 0;
+                    foreach (var item in tempList)
+                    {
+                        count++; 
+                <tr class="nen">
+                    <td>@{Write(item.CreatedDate.HasValue ? item.CreatedDate.Value.ToString("dd/MM/yyyy") : "");}</td>
+                    <td>@{Write(item.CreatedDate.HasValue ? item.CreatedDate.Value.ToShortTimeString() : "");}</td>
+                    <td>@item.Task.TaskName</td>
+                    <td>@{Write(item.Port != null ? item.Port.PortName : "");}</td>
+                    @*<td>@{Write(item.State != null ? item.State.StateName : "");}</td>*@
+                    <td class="tags-ul">
+                        <ul>
+                            <li class="tag-field tag-1">@{Write(item.State != null ? item.State.StateName : "");}
+                                <div class="clear"></div>
+                            </li>
+                            @{WriteLiteral(string.IsNullOrEmpty(item.Position) ? "" : "<li class=\"tag-field tag-2\">" + item.Position + "</li>");}
+                            @{WriteLiteral(string.IsNullOrEmpty(item.CategoryName) ? "" : "<li class=\"tag-field tag-3\">" + item.CategoryName + "</li>");}
+                            @{WriteLiteral(item.ArrangedWeight == 0 ? "" : "<li class=\"tag-field tag-4\"> SL thực hiện: " + item.ArrangedWeight + "</li>");}
+                            @{WriteLiteral(item.RestWeight == 0 ? "" : "<li class=\"tag-field tag-5\"> SL còn: " + item.RestWeight + "</li>");}
+                        </ul>
+                    </td>
+                    <td><a class="modify" href="@Url.Action("Modify", "Update", new { jnId = item.Id })" title="Cập nhật: @Getdate(item.UpdateTime) Bởi: @item.Updator"></a></td>
+                </tr>
+                    }
+                    if (count < day.Value)
+                    {
+                        for (int i = 0; i < day.Value - count; i++)
+                        {
+                <tr class="nen">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                        }
+                    }
+                }
+            }
+            <tr>
+                @if (!Roles.IsUserInRole("Staff"))
+                {<td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="background: #058fdd;"><a style="padding: 3px 5px;border: none;outline: none;color: white;" href="@Url.Action("Index", "Update", new { Area = "CargoShip", @shipId = Model.Ship.ShipId, @tripId = Model.SelectedTripId }, null)">Cập nhập</a></td>
+                }
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="contentleft">
+    <div class="title2">
+        <div class="gachchan"></div>
+    </div>
+    <div id="tabl" class="detail-tab">
+        <table id="journeyplan-table">
+            <tr>
+                <td><b>Mã dự kiến</b>
+                </td>
+                <td><b>Tên dự kiến</b>
+                </td>
+                <td><b>Tên cảng</b>
+                </td>
+                <td>
+                    <b>Ngày</b>
+                </td>
+                <td><b>Kết quả</b>
+                </td>
+            </tr>
+            <tbody id="journeyplan-tbody">
+                @foreach (var day in dayCollections)
+                {
+                    var tempList = Model.JourneyPlans.Where(p => (p.Port != null || p.PlanId != null || p.PlanTime != null) && p.PlanTime.Value.Date == day.Key.Date);
+                    if (tempList != null)
+                    {
+                        int count = 0;
+                        foreach (var item in tempList)
+                        {
+                            count++;
+                            var temp = Model.Results.FirstOrDefault(p => p.ShipId == item.ShipId && p.TripId == item.TripId && p.PlanId == item.PlanId && p.PlanDate == item.PlanTime);
+                    <tr class="nen">
+                        <td>@item.PlanId</td>
+                        <td>@item.Plan.PlanName</td>
+                        <td>@{Write(item.PortId.HasValue ? item.Port.PortName : "");}</td>
+                        <td>@{Write(item.PlanTime.HasValue ? item.PlanTime.Value.ToString("dd/MM/yyyy") : "");}</td>
+                        @if (temp != null)
+                        {
+                            <td>Thực tế: @{Write(temp.JourneyDate.HasValue ? temp.JourneyDate.Value.ToString("dd/MM/yyyy") : "");}- @temp.Remark
+                                <br />
+                                Lý do: @{Write(temp.Reson != null ? temp.Reson.ResonName : "");}
+                            </td>
+                        }
+                        else
+                        {<td></td>
+                        }
+                        <td><a class="modify" href="@Url.Action("PModify", "Update", new { plId = item.JourneyPlanId })" title="Cập nhật: @Getdate(item.UpdateTime) Bởi: @item.Updator"></a></td>
+                    </tr>
+                        }
+                        if (count < day.Value)
+                        {
+                            for (int i = 0; i < day.Value - count; i++)
+                            {
+                    <tr class="nen">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                            }
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="contentright">
+    <div class="title2">
+        <div class="gachchan"></div>
+    </div>
+    <div id="tabr" class="detail-tab">
+        <table id="note-table">
+            <tr>
+                <td><b>Ngày</b>
+                </td>
+                <td><b>Ghi chú</b>
+                </td>
+            </tr>
+            <tbody id="note-tbody">
+                @foreach (var day in dayCollections)
+                {
+                    var tempList = Model.Notes.Where(p => (p.CreatedDate != null || string.IsNullOrEmpty(p.NoteContent)) && p.CreatedDate.Value.Date == day.Key.Date);
+                    if (tempList != null)
+                    {
+                        int count = 0;
+                        foreach (var item in tempList)
+                        {
+                            count++;
+                    <tr class="nen">
+                        <td>@{Write(item.UpdateTime.HasValue ? item.UpdateTime.Value.ToString("dd/MM/yyyy") : "");}</td>
+                        <td>@item.NoteContent</td>
+                        <td><a class="modify" href="@Url.Action("NModify", "Update", new { noteid = item.NoteId })" title="Cập nhật: @Getdate(item.UpdateTime) Bởi: @item.Updator"></a></td>
+                    </tr>
+                        }
+                        if (count < day.Value)
+                        {
+                            for (int i = 0; i < day.Value - count; i++)
+                            {
+                    <tr class="nen">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                            }
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="clear"></div>
+
+<div id="tab" class="history">
+    <div class="title3">
+        <div class="gachchan">Lịch sử</div>
+    </div>
+    <table id="detail-table">
+        <tr>
+            <td>
+                <b>Đầu việc</b>
+            </td>
+            <td>
+                <b>Giờ</b>
+            </td>
+            <td>
+                <b>Ngày</b>
+            </td>
+            <td><b>Tên cảng</b>
+            </td>
+            <td>
+                <b>Chi tiết CV</b>
+            </td>
+        </tr>
+        <tbody id="detail-tbody">
+            @foreach (var item in Model.JourneySupervisions)
+            {
+                <tr class="nen">
+
+
+                    <td>@item.Task.TaskName</td>
+                    <td>@{Write(item.CreatedDate.HasValue ? item.CreatedDate.Value.ToShortTimeString() : "");}</td>
+                    <td>@{Write(item.CreatedDate.HasValue ? item.CreatedDate.Value.ToString("dd/MM/yyyy") : "");}</td>
+                    <td>@{Write(item.Port != null ? item.Port.PortName : "");}</td>
+                    @*<td>@{Write(item.State != null ? item.State.StateName : "");}</td>*@
+                    <td class="tags-ul">
+                        <ul>
+                            <li class="tag-field tag-1">@{Write(item.State != null ? item.State.StateName : "");}
+                                <div class="clear"></div>
+                            </li>
+                            @{WriteLiteral(string.IsNullOrEmpty(item.Position) ? "" : "<li class=\"tag-field tag-2\">" + item.Position + "</li>");}
+                            @{WriteLiteral(string.IsNullOrEmpty(item.CategoryName) ? "" : "<li class=\"tag-field tag-3\">" + item.CategoryName + "</li>");}
+                            @{WriteLiteral(item.ArrangedWeight == 0 ? "" : "<li class=\"tag-field tag-4\"> SL thực hiện: " + item.ArrangedWeight + "</li>");}
+                            @{WriteLiteral(item.RestWeight == 0 ? "" : "<li class=\"tag-field tag-5\"> SL còn: " + item.RestWeight + "</li>");}
+                        </ul>
+                    </td>
+                    <td><a class="modify" href="@Url.Action("Modify", "Update", new { jnId = item.Id })" title="Cập nhật: @Getdate(item.UpdateTime) Bởi: @item.Updator"></a></td>
+                </tr>
+            }
+            @* <tr>
+                @if (!Roles.IsUserInRole("Staff"))
+                {<td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="background: #058fdd;"><a style="padding: 3px 5px;border: none;outline: none;color: white;" href="@Url.Action("Index", "Update", new { Area = "CargoShip", @shipId = Model.Ship.ShipId, @tripId = Model.SelectedTripId }, null)">Cập nhập</a></td>
+                }
+            </tr>*@
+        </tbody>
+
+    </table>
+</div>
+<div class="clear"></div>
+<div class="contentleft history-2">
+    <div class="title2">
+        <div class="gachchan">Bảng dự kiến</div>
+    </div>
+    <div id="tabl">
+        <table id="journeyplan-table-2">
+            <tr>
+                <td><b>Mã dự kiến</b>
+                </td>
+                <td><b>Tên dự kiến</b>
+                </td>
+                <td><b>Tên cảng</b>
+                </td>
+                <td>
+                    <b>Ngày</b>
+                </td>
+                <td><b>Kết quả</b>
+                </td>
+            </tr>
+            <tbody id="journeyplan-tbody">
+                @foreach (var item in Model.JourneyPlans)
+                {
+                    if (item.Port != null || item.PlanId != null || item.PlanTime != null)
+                    {
+                        var temp = Model.Results.FirstOrDefault(p => p.ShipId == item.ShipId && p.TripId == item.TripId && p.PlanId == item.PlanId && p.PlanDate == item.PlanTime);
+                    <tr class="nen">
+                        <td>@item.PlanId</td>
+                        <td>@item.Plan.PlanName</td>
+                        <td>@{Write(item.PortId.HasValue ? item.Port.PortName : "");}</td>
+                        <td>@{Write(item.PlanTime.HasValue ? item.PlanTime.Value.ToString("dd/MM/yyyy") : "");}</td>
+
+                        @if (temp != null)
+                        {
+                            <td>Thực tế: @{Write(temp.JourneyDate.HasValue ? temp.JourneyDate.Value.ToString("dd/MM/yyyy") : "");}- @temp.Remark
+                                <br />
+                                Lý do: @{Write(temp.Reson != null ? temp.Reson.ResonName : "");}
+                            </td>
+                        }
+                        else
+                        {<td></td>}
+                        <td><a class="modify" href="@Url.Action("PModify", "Update", new { plId = item.JourneyPlanId })" title="Cập nhật: @Getdate(item.UpdateTime) Bởi: @item.Updator"></a></td>
+                    </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="contentright">
+    <div class="title2">
+        <div class="gachchan">Bảng ghi chú</div>
+    </div>
+    <div id="tabr">
+        <table id="note-table">
+            <tr>
+                <td><b>Ngày</b>
+                </td>
+                <td><b>Ghi chú</b>
+                </td>
+            </tr>
+            <tbody id="note-tbody">
+                @foreach (var item in Model.Notes)
+                {
+                    if (item.CreatedDate != null || string.IsNullOrEmpty(item.NoteContent))
+                    {
+                    <tr class="nen">
+                        <td>@{Write(item.UpdateTime.HasValue ? item.UpdateTime.Value.ToString("dd/MM/yyyy") : "");}</td>
+                        <td>@item.NoteContent</td>
+                        <td><a class="modify" href="@Url.Action("NModify", "Update", new { noteid = item.NoteId })" title="Cập nhật: @Getdate(item.UpdateTime) Bởi: @item.Updator"></a></td>
+                    </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="clear"></div>
+<script>
+    function selectedNations(data) {
+        $('.start-nation').text(data.startNation == null ? "" : data.startNation);
+        $('.stop-nation').text(data.stopNation == null ? "" : data.stopNation);
+        $('.start-time').text(data.startTime == null ? "" : data.startTime);
+        $('.tripidhidden').val(data.tripId);
+    }
+    function filterRoute(data) {
+        $('#detail-tbody').remove();
+        $('#journeyplan-tbody').remove();
+        $('#note-tbody').remove();
+        $('#detail-table').append('<tbody id="detail-tbody"></tbody>');
+        $('#journeyplan-table').append('<tbody id="journeyplan-tbody"></tbody>');
+        $('#note-table').append('<tbody id="note-tbody"></tbody>');
+        $.each(data.ar1, function (i, item) {
+            $('#detail-tbody').append('<tr class="nen">'
+                        + '<td>' + item.Date + '</td>'
+                        + '<td>' + item.Time + '</td>'
+                        + '<td>' + item.nationName + '</td>'
+                        + '<td>' + item.PortName + '</td>'
+                        + '<td>' + item.Position + '</td>'
+                        + '<td>' + item.CategoryName + '</td>'
+                        + '<td>' + item.TaskName + '</td>'
+                        + '<td>' + item.StateName + '</td>'
+                        + '<td class="last-td>' + item.result + '</td>'
+                        + '<td>' + '<a class="modify" href="/Update/Modify?jnId' + item.id + '" title="Cập nhật: ' + item.Date + ' Bởi: Alin"></a>' + '</td>'
+                    + '</tr>');
+        });
+        $.each(data.ar3, function (i, item) {
+            $('#journeyplan-tbody').append('<tr class="nen">'
+                        + '<td>' + item.planId + '</td>'
+                        + '<td>' + item.planName + '</td>'
+                        + '<td>' + item.portName + '</td>'
+                        + '<td>' + item.createdDate + '</td>'
+                          + '<td> Thực tế:' + item.journeyTime + " - " + item.ssresult + "</br> Lý do: " + item.reson + '</td>'
+            //+ '<td>' + '<a class="modify" href="/Update/Modify?plId=' + item.id + '" title="Cập nhật: ' + item.createdDate + ' Bởi: Alin"></a>' + '</td>'
+        + '</tr>');
+        });
+        $.each(data.ar2, function (i, item) {
+            $('#note-tbody').append('<tr class="nen">'
+                        + '<td>' + item.createdDate + '</td>'
+                        + '<td>' + item.note + '</td>'
+            + '<td>' + '<a class="modify" href="/Update/Modify?noteid=' + item.NoteId + '" title="Cập nhật: ' + item.createdDate + ' Bởi: Alin"></a>' + '</td>'
+                    + '</tr>');
+        });
+    }
+    $('.detail-view').click(function () { $(this).attr('href', '?shipId=' + $('.shipidview').val() + '&tripId=' + $('.tripidhidden').val() + '&all=true&currentTrip=false') });
+    $('.graph-view').click(function () {
+        var url = $(this).attr('href');
+        if (url.indexOf('&tripId') >= 0) {
+            url = url.substr(0, url.indexOf('&tripId'));
+        }
+        $(this).attr('href', url + '&tripId=' + $('.tripidhidden').val())
+    });
+</script>
+<script>
+    $(function () {
+        $(".datepicker, .tab-time input, li.journey-starttime input").datepicker({
+            showButtonPanel: false,
+            dateFormat: 'dd/mm/yy',
+            altField: 'this',
+            altFormat: 'mm/dd/yy',
+            beforeShow: function () {
+                $(".ui-datepicker").css('font-size', 12)
+            }
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $('a.modify').aToolTip({
+            fixed: false,                   // Set true to activate fixed position  
+            clickIt: false,                 // set to true for click activated tooltip  
+            inSpeed: 200,                   // Speed tooltip fades in  
+            outSpeed: 100,                  // Speed tooltip fades out  
+            tipContent: '',                 // Pass in content or it will use objects 'title' attribute  
+            toolTipClass: 'defaultTheme',   // Set class name for custom theme/styles  
+            xOffset: 5,                     // x position  
+            yOffset: 5,                     // y position  
+            onShow: null,                   // callback function that fires after atooltip has shown  
+            onHide: null                    // callback function that fires after atooltip has faded out      
+        });
+    });
+</script>

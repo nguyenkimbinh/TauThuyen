@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Manage Users";
+    ViewBag.MenuId = "manageusers";
+}
+<div class="pages manage-users">
+    <h1>@ViewBag.Title</h1>
+    <div class="search-user">
+        @using (Html.BeginForm())
+        {
+            <span>User name:</span>
+            <input type="text" name="UserName" value="@ViewBag.UserName" />
+            <input type="submit" value="Search" class="buttons" />
+        }
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿@model Pii.Areas.Admin.Models.UpdatePage
+@{
+    ViewBag.Title = Model.Title;
+}
+<h2>@ViewBag.Title</h2>
+<p>@ViewBag.Message</p>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.NewsId)
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Content)
+        @Html.ValidationMessageFor(model => model.Content)
+    </div>
+    
+    <p>
+        <input type="submit" value="Cập nhật" />
+    </p>
+  
+}

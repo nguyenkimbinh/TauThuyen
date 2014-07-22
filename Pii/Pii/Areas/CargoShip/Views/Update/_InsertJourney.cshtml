@@ -1,0 +1,111 @@
+﻿@model Pii.Areas.CargoShip.ViewModel.UpdateViewModel
+@using Pii.Areas.CargoShip.Models
+<div class="content1">
+    <ul>
+        <li>Chuyến hiện tại:
+                @Html.DisplayFor(prop => prop.CurrentTripId)
+            @Html.HiddenFor(prop => prop.CurrentTripId)
+        </li>
+        <li class="journey-starttime">Ngày bắt đầu: 
+            <span>@{Write(Model.CurrentStartTime.HasValue ? Model.CurrentStartTime.Value.ToString("dd/MM/yyyy") : "");}</span>
+        </li>
+        <li>Đi từ
+                        @Html.DropDownListFor(model => model.StartNationId, ((IEnumerable<Nation>)Model.AvailableNations).Select(option => new SelectListItem
+{
+    Text = (option == null ? "Không có" : option.NationName),
+    Value = option.NationId,
+    Selected = (Model != null) && (option.NationId == Model.StartNationId)
+}), "", new { @class = "dropdown-list" })
+        </li>
+        <li>Đến
+                       @Html.DropDownListFor(model => model.StopNationId, ((IEnumerable<Nation>)Model.AvailableNations).Select(option => new SelectListItem
+{
+    Text = (option == null ? "Không có" : option.NationName),
+    Value = option.NationId,
+    Selected = (Model != null) && (option.NationId == Model.StopNationId)
+}), "", new { @class = "dropdown-list" })
+        </li>
+
+    </ul>
+</div>
+<div class="clear"></div>
+
+<div class="content2">
+    <div class="title2">
+        <div class="gachchan">Cập nhật chi tiết chuyến</div>
+    </div>
+    <div class="route-detail">
+
+        @Html.TextBoxFor(p => p.ContractNumber, new { @class = "contract-number", autocomplete = "off" })
+        @Html.ValidationMessageFor(prop => prop.ContractNumber)
+        <div class="clear"></div>
+        <div class="update-trip">
+            @if (Model.Logs != null)
+            {
+                foreach (var item in Model.Logs)
+                {
+                    
+                
+                <div class="category route-item">
+                    Loại hàng:
+                    @Html.DisplayFor(p => item.Category)
+                </div>
+                <div class="weight route-item">
+                    Khối lượng: @Html.DisplayFor(p => item.Weight)
+                </div>
+                <div class="start-port route-item">
+                    Cảng xếp hàng: @Html.DisplayFor(p => item.StartPort)
+                </div>
+                <div class="stop-port route-item">
+                    Cảng dỡ hàng: 
+                    @Html.DisplayFor(p => item.StopPort)
+                </div>
+                <div class="clear"></div>
+                }
+            }
+        </div>
+        <div class="clear"></div>
+        <div class="update-trip-list">
+            <div class="update-trip">
+                <div class="category route-item">
+                    @Html.DropDownListFor(model => model.CategoryIds, ((IEnumerable<Category>)Model.AvailableCategories).Select(option => new SelectListItem
+{
+    Text = (option == null ? "Không có" : option.CategoryName),
+    Value = option.CategoryId.ToString(),
+    Selected = false
+}), "Loại hàng", new { @class = "dropdown-list" })
+                    @Html.ValidationMessageFor(prop => prop.CategoryIds)
+                </div>
+                <div class="weight route-item">
+                    @*<input type="text" value="" class="route-weight" autocomplete="off">*@
+                    @Html.TextBoxFor(p => p.Weights, new { @class = "route-weight", autocomplete = "off" })
+                    @Html.ValidationMessageFor(prop => prop.Weights)
+                </div>
+                <div class="start-port route-item">
+                    @Html.DropDownListFor(model => model.StartPortIds, ((IEnumerable<Port>)Model.AvailablePorts).Select(option => new SelectListItem
+{
+    Text = (option == null ? "Không có" : option.PortName),
+    Value = option.PortId.ToString(),
+    Selected = false
+}), "Cảng xếp hàng ", new { @class = "dropdown-list" })
+                    @Html.ValidationMessageFor(prop => prop.StartPortIds)
+                </div>
+                <div class="stop-port route-item">
+                    @Html.DropDownListFor(model => model.StopPortIds, ((IEnumerable<Port>)Model.AvailablePorts).Select(option => new SelectListItem
+{
+    Text = (option == null ? "Không có" : option.PortName),
+    Value = option.PortId.ToString(),
+    Selected = false
+}), "Cảng dỡ hàng", new { @class = "dropdown-list" })
+                    @Html.ValidationMessageFor(prop => prop.StopPortIds)
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="route-footer">
+            <a href="#" class="add-more">Thêm</a>
+        </div>
+    </div>
+</div>

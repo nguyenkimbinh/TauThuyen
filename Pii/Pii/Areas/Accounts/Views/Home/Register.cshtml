@@ -1,0 +1,38 @@
+﻿@model Pii.Areas.Accounts.Models.Register
+@{
+}
+<div class="view-all">
+    <div class="pages register-page">
+        <h1 class="title">Đăng ký</h1>
+        @using (Html.BeginForm())
+        {
+            <div class="row">
+                @Html.LabelFor(m => m.UserName)
+                @Html.EditorFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+                <div class="clear"></div>
+            </div>
+            <div class="row">
+                @Html.LabelFor(m => m.Password)
+                @Html.EditorFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+                <div class="clear"></div>
+            </div>
+            <div class="row">
+                @Html.LabelFor(m => m.ConfirmPassword)
+                @Html.EditorFor(m => m.ConfirmPassword)
+                <div class="clear"></div>
+            </div>
+            <div class="row">
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                <div class="clear"></div>
+            </div>
+            <div class="row">
+                @Html.DropDownListFor(p => p.Role, ViewBag.roles as SelectList, "Vui lòng chọn quyền")
+                <div class="clear"></div>
+            </div>
+                <div class="clear"></div>
+            <input type="submit" name="name" value="Thêm" />
+        }
+    </div>
+</div>

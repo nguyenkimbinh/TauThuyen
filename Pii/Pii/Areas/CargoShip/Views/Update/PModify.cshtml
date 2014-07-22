@@ -1,0 +1,72 @@
+﻿@model Pii.Areas.CargoShip.Models.JourneyPlan
+@{
+    ViewBag.Title = "Modify";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Pii.Areas.CargoShip.Models
+<div class="modify-container">
+    @using (Html.BeginForm("PModify", "Update", FormMethod.Post))
+    {
+        @Html.HiddenFor(p => p.JourneyPlanId)
+        @Html.HiddenFor(p => p.ShipId)
+        @Html.HiddenFor(p => p.TripId)
+        <div class="field">
+            Tàu: 
+        <p>@Model.Ship.ShipName</p>
+        </div>
+        <div class="field">
+            Mã chuyến:
+        <p>@Model.TripId</p>
+        </div>
+        <div class="field">
+            Cảng: 
+         @Html.DropDownListFor(model => model.PortId, ((IEnumerable<Port>)ViewBag.availablePorts).Select(option => new SelectListItem
+{
+    Text = (option == null ? "Không có" : option.PortName),
+    Value = option.PortId.ToString(),
+    Selected = (Model.PortId != null) && (option.PortId == Model.PortId)
+}), "", new { @class = "dropdown-list" })
+        </div>
+        <div class="field">
+            Dự kiến: 
+         @Html.DropDownListFor(model => model.PlanId, ((IEnumerable<Plan>)ViewBag.availablePlans).Select(option => new SelectListItem
+{
+    Text = (option == null ? "Không có" : option.PlanName),
+    Value = option.PlanId.ToString(),
+    Selected = (Model.PlanId != null) && (option.PlanId == Model.PlanId)
+}), "", new { @class = "dropdown-list" })
+        </div>
+        <div class="field">
+            Thời gian: 
+        @Html.TextBoxFor(p => p.Time, new { @class = "tab1-time" })
+            @Html.TextBoxFor(p => p.Date, new { @class = "datepicker" })
+        </div>
+        <input type="submit" name="name" value="Xác nhận" />
+    }
+
+    <div class="remove-record">
+        @using (Html.BeginForm("Delete", "Update", FormMethod.Post))
+        {
+            @Html.Hidden("id", Model.JourneyPlanId)
+            @Html.Hidden("shipId", Model.ShipId)
+            @Html.Hidden("tripId", Model.TripId)
+            @Html.Hidden("key", 2)
+            <input type="submit" name="name" value="Xóa cập nhật" />
+        }
+    </div>
+</div>
+<script>
+    $(function () {
+        $(".datepicker, .tab-time input, li.journey-starttime input").datepicker({
+            showButtonPanel: false,
+            dateFormat: 'dd/mm/yy',
+            altField: 'this',
+            altFormat: 'mm/dd/yy',
+            beforeShow: function () {
+                $(".ui-datepicker").css('font-size', 12)
+            }
+        });
+        $('.tab1-time').timepicker();
+    });
+
+</script>

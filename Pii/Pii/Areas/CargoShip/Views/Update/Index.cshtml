@@ -1,0 +1,426 @@
+﻿@model Pii.Areas.CargoShip.ViewModel.UpdateViewModel
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string onload = ViewBag.isRefresh;
+    IEnumerable<string> nations = ViewBag.nations;
+}
+@using Pii.Areas.CargoShip.Models;
+
+<div class="title1">@Model.Ship.ShipName</div>
+<div class="clear"></div>
+@using (Html.BeginForm("Update", "Update", new { Area = "CargoShip" }, FormMethod.Post, null))
+{
+    @Html.HiddenFor(prop => prop.Ship.ShipId)
+    @Html.HiddenFor(prop => prop.Ship.ShipName)
+    @Html.Hidden("InsertOrUpdate", 1)
+
+    Html.RenderPartial("_InsertJourney");
+    //if (Model.InsertOrUpdate == 1)
+    //{
+    //    Html.RenderPartial("_InsertJourney");
+    //}
+    //else
+    //{
+    //    Html.RenderPartial("_UpdateJourney");
+    //}
+    <div class="clear"></div>
+    <div id="tab">
+        <div id="usual1" class="usual">
+            <ul class="tabs-list">
+                <li><a href="#" data-id="detail-tab-1" class="tabs active">Xếp hàng<span></span></a></li>
+                <li><a href="#" data-id="detail-tab-2" class="tabs">Hành trình trên biển<span></span></a></li>
+                <li><a href="#" data-id="detail-tab-3" class="tabs">Dỡ hàng<span></span></a></li>
+                <li><a href="#" data-id="detail-tab-4" class="tabs">Transit/Bunkering/Deviation<span></span></a></li>
+                <li><a href="#" data-id="detail-tab-5" class="tabs">Dự kiến<span></span></a></li>
+                <li><a href="#" data-id="detail-tab-6" class="tabs">Ghi chú<span></span></a></li>
+            </ul>
+            <div id="detail-tab-1" class="tab-content">
+                @Html.HiddenFor(prop => prop.LoadGoodsJourney.TaskId)
+                <div class="field">
+                    Cảng:
+                    @Html.DropDownListFor(model => model.LoadGoodsJourney.PortId, ((IEnumerable<Port>)Model.AvailablePorts).Select(option => new SelectListItem
+                        {
+                            Text = (option == null ? "Không có" : option.PortName),
+                            Value = option.PortId.ToString(),
+                            Selected = (Model != null) && (option.PortId == Model.LoadGoodsJourney.PortId)
+                        }), "", new { @class = "dropdown-list" })
+                    <p>Thêm mới:</p>
+
+                    <div class="tab-time2">
+                        <div>
+                            @Html.ActionLink("Cảng", "NewPort", new { Area = "CargoShip", shipId = Model.Ship.ShipId, tripId = Model.CurrentTripId }, new {@class= "new-port" })
+                        </div>
+                        <div>
+                            @Html.ActionLink("Loại hàng", "NewCategory", new { Area = "CargoShip", shipId = Model.Ship.ShipId, tripId = Model.CurrentTripId }, new { @class = "new-category" })
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    Thời gian:
+                    @Html.TextBoxFor(prop => prop.LoadGoodsJourney.Time, new { @class = "tab1-time" })
+                    <p>Ngày:</p>
+                    <div class="tab-time">
+                        @Html.TextBoxFor(p => p.LoadGoodsJourney.Date)
+                    </div>
+
+                </div>
+                <div class="field">
+                    Tình trạng:
+                    @Html.DropDownListFor(model => model.LoadGoodsJourney.StateId, ((IEnumerable<State>)Model.AvailableStates).Select(option => new SelectListItem
+               {
+                   Text = (option == null ? "Không có" : option.StateName),
+                   Value = option.StateId.ToString(),
+                   Selected = (Model != null) && (option.StateId == Model.LoadGoodsJourney.StateId)
+               }), "", new { @class = "dropdown-list" })
+
+                </div>
+                <div class="field">
+                    Vị trí:
+                    @Html.TextBoxFor(prop => prop.LoadGoodsJourney.Position, new { autocomplete = "off" })
+                </div>
+                <div class="field">
+                    Loại hàng:
+                    @Html.DropDownListFor(model => model.LoadGoodsJourney.CategoryName, ((IEnumerable<Category>)Model.AvailableCategories).Select(option => new SelectListItem
+               {
+                   Text = (option == null ? "Không có" : option.CategoryName),
+                   Value = option.CategoryName,
+                   Selected = (Model != null) && (option.CategoryName == Model.LoadGoodsJourney.CategoryName)
+               }), "", new { @class = "dropdown-list" })
+                </div>
+                <div class="field">
+                    Số lượng thực hiện:
+                    @Html.TextBoxFor(prop => prop.LoadGoodsJourney.ArrangedWeight, new { autocomplete = "off" })
+                    @Html.ValidationMessageFor(p => p.LoadGoodsJourney.ArrangedWeight)
+                    <p>Số lượng còn:</p>
+                    <div class="rest-weight">
+                    @Html.ValidationMessageFor(p => p.LoadGoodsJourney.RestWeight)
+                        @Html.TextBoxFor(p => p.LoadGoodsJourney.RestWeight,new { autocomplete = "off" })
+                    </div>
+                </div>
+
+                @*<div class="field">
+                    Tên quốc gia @Html.TextBoxFor(model => model.LoadGoodsJourney.NationName)
+                </div>*@
+            </div>
+            <div id="detail-tab-2" class="tab-content">
+                @Html.HiddenFor(prop => prop.JourneyInProgress.TaskId)
+                <div class="field">
+                    Thời gian:
+                    @Html.TextBoxFor(prop => prop.JourneyInProgress.Time, new { @class = "tab1-time" })
+                    <p>Ngày:</p>
+                    <div class="tab-time">
+                        @Html.TextBoxFor(p => p.JourneyInProgress.Date)
+                    </div>
+                </div>
+                <div class="field">
+                    Tình trạng:
+                    @Html.DropDownListFor(model => model.JourneyInProgress.StateId, ((IEnumerable<State>)Model.AvailableStates).Select(option => new SelectListItem
+               {
+                   Text = (option == null ? "Không có" : option.StateName),
+                   Value = option.StateId.ToString(),
+                   Selected = (Model != null) && (option.StateId == Model.JourneyInProgress.StateId)
+               }), "", new { @class = "dropdown-list" })
+                </div>
+                <div class="field">
+                    Vị trí:
+                    @Html.TextBoxFor(prop => prop.JourneyInProgress.Position, new { autocomplete = "off" })
+                </div>
+                @*<div class="field">
+                    Tên quốc gia @Html.DropDownListFor(model => model.JourneyInProgress.NationName, ((IEnumerable<string>)nations).Select(option => new SelectListItem
+                            {
+                                Text = (option == null ? "Không có" : option),
+                                Value = option,
+                                Selected = (Model != null) && (option == Model.JourneyInProgress.NationName)
+                            }), "", new { @class = "dropdown-list" })
+                </div>*@
+            </div>
+            <div id="detail-tab-3" class="tab-content">
+                @Html.HiddenFor(prop => prop.UnloadGoodsJourney.TaskId)
+                <div class="field">
+                    Cảng:
+                    @Html.DropDownListFor(model => model.UnloadGoodsJourney.PortId, ((IEnumerable<Port>)Model.AvailablePorts).Select(option => new SelectListItem
+               {
+                   Text = (option == null ? "Không có" : option.PortName),
+                   Value = option.PortId.ToString(),
+                   Selected = (Model != null) && (option.PortId == Model.UnloadGoodsJourney.PortId)
+               }), "", new { @class = "dropdown-list" })
+                    <p>Thêm mới:</p>
+
+                    <div class="tab-time2">
+                        <div>
+                            @Html.ActionLink("Cảng", "NewPort", new { Area = "CargoShip", shipId = Model.Ship.ShipId, tripId = Model.CurrentTripId }, new { @class = "new-port" })
+                        </div>
+                        <div>
+                            @Html.ActionLink("Loại hàng", "NewCategory", new { Area = "CargoShip", shipId = Model.Ship.ShipId, tripId = Model.CurrentTripId }, new { @class = "new-category" })
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    Thời gian:
+                    @Html.TextBoxFor(prop => prop.UnloadGoodsJourney.Time, new { @class = "tab1-time" })
+                    <p>Ngày:</p>
+                    <div class="tab-time">
+                        @Html.TextBoxFor(p => p.UnloadGoodsJourney.Date)
+                    </div>
+                </div>
+                <div class="field">
+                    Tình trạng:
+                    @Html.DropDownListFor(model => model.UnloadGoodsJourney.StateId, ((IEnumerable<State>)Model.AvailableStates).Select(option => new SelectListItem
+               {
+                   Text = (option == null ? "Không có" : option.StateName),
+                   Value = option.StateId.ToString(),
+                   Selected = (Model != null) && (option.StateId == Model.UnloadGoodsJourney.StateId)
+               }), "", new { @class = "dropdown-list" })
+                </div>
+                <div class="field">
+                    Vị trí:
+                    @Html.TextBoxFor(prop => prop.UnloadGoodsJourney.Position, new { autocomplete = "off" })
+                </div>
+               
+                <div class="field">
+                    Loại hàng:
+                    @Html.DropDownListFor(model => model.UnloadGoodsJourney.CategoryName, ((IEnumerable<Category>)Model.AvailableCategories).Select(option => new SelectListItem
+               {
+                   Text = (option == null ? "Không có" : option.CategoryName),
+                   Value = option.CategoryName,
+                   Selected = (Model != null) && (option.CategoryName == Model.UnloadGoodsJourney.CategoryName)
+               }), "", new { @class = "dropdown-list" })
+                </div>
+                <div class="field">
+                    Số lượng thực hiện:
+                    @Html.TextBoxFor(prop => prop.UnloadGoodsJourney.ArrangedWeight, new { autocomplete = "off" })
+                    <p>Số lượng còn:</p>
+                    <div class="rest-weight">
+                        @Html.TextBoxFor(p => p.UnloadGoodsJourney.RestWeight)
+                    </div>
+                </div>
+                @*<div class="field">
+                    Tên quốc gia @Html.DropDownListFor(model => model.UnloadGoodsJourney.NationName, ((IEnumerable<string>)nations).Select(option => new SelectListItem
+                            {
+                                Text = (option == null ? "Không có" : option),
+                                Value = option,
+                                Selected = (Model != null) && (option == Model.UnloadGoodsJourney.NationName)
+                            }), "", new { @class = "dropdown-list" })
+                </div>*@
+            </div>
+            <div id="detail-tab-4" class="tab-content">
+                @Html.HiddenFor(prop => prop.UnusualJourney.TaskId)
+                <div class="field">
+                    Cảng:
+                    @Html.DropDownListFor(model => model.UnusualJourney.PortId, ((IEnumerable<Port>)Model.AvailablePorts).Select(option => new SelectListItem
+               {
+                   Text = (option == null ? "Không có" : option.PortName),
+                   Value = option.PortId.ToString(),
+                   Selected = (Model.UnloadGoodsJourney.PortId != null) && (option.PortId == Model.UnusualJourney.PortId)
+               }), "", new { @class = "dropdown-list" })
+                    <p>Thêm mới:</p>
+
+                    <div class="tab-time2">
+                        <div>
+                            @Html.ActionLink("Cảng", "NewPort", new { Area = "CargoShip", shipId = Model.Ship.ShipId, tripId = Model.CurrentTripId }, new { @class = "new-port" })
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    Thời gian:
+                    @Html.TextBoxFor(prop => prop.UnusualJourney.Time, new { @class = "tab1-time" })
+                    <p>Ngày:</p>
+                    <div class="tab-time">
+                        @Html.TextBoxFor(p => p.UnusualJourney.Date)
+                    </div>
+                </div>
+                <div class="field">
+                    Tình trạng:
+                    @Html.DropDownListFor(model => model.UnusualJourney.StateId, ((IEnumerable<State>)Model.AvailableStates).Select(option => new SelectListItem
+               {
+                   Text = (option == null ? "Không có" : option.StateName),
+                   Value = option.StateId.ToString(),
+                   Selected = (Model != null) && (option.StateId == Model.UnusualJourney.StateId)
+               }), "", new { @class = "dropdown-list" })
+                </div>
+                @*<div class="field">
+                    Tên quốc gia @Html.DropDownListFor(model => model.UnusualJourney.NationName, ((IEnumerable<string>)nations).Select(option => new SelectListItem
+                            {
+                                Text = (option == null ? "Không có" : option),
+                                Value = option,
+                                Selected = (Model != null) && (option == Model.UnusualJourney.NationName)
+                            }), "", new { @class = "dropdown-list" })
+                </div>
+                <div class="field">
+                    Chú thích:
+                    @Html.TextAreaFor(prop => prop.UnusualJourney.Note, new { cols = "1", rows = "1" })
+                </div>*@
+
+            </div>
+            <div id="detail-tab-5" class="tab-content">
+                <div class="field">
+                    Mã dự kiến:
+                    @Html.DropDownListFor(model => model.JourneyPlan.PlanId, ((IEnumerable<Plan>)Model.AvailablePlans).Select(option => new SelectListItem
+               {
+                   Text = (option == null ? "Không có" : option.PlanId),
+                   Value = option.PlanId.ToString(),
+                   Selected = (Model != null) && (option.PlanId == Model.JourneyPlan.PlanId)
+               }), "", new { @class = "dropdown-list" })
+                </div>
+                <div class="field">
+                    Thời gian:
+                    @Html.TextBoxFor(prop => prop.JourneyPlan.Time, new { @class = "tab1-time" })
+                    <p>Ngày:</p>
+                    <div class="tab-time">
+                        @Html.TextBoxFor(p => p.JourneyPlan.Date)
+                    </div>
+                </div>
+                <div class="field">
+                    Địa điểm:
+                    @Html.DropDownListFor(model => model.JourneyPlan.PortId, ((IEnumerable<Port>)Model.AvailablePorts).Select(option => new SelectListItem
+               {
+                   Text = (option == null ? "Không có" : option.PortName),
+                   Value = option.PortId.ToString(),
+                   Selected = (Model != null) && (option.PortId == Model.JourneyPlan.PortId)
+               }), "", new { @class = "dropdown-list" })
+                </div>
+            </div>
+            <div id="detail-tab-6" class="tab-content">
+                <div class="field">
+                    Thời gian:
+                    @Html.TextBoxFor(prop => Model.Note.Date, new { @class = "datepicker", @autocomplete = "off" })
+                </div>
+                <div class="field">
+                    Nội dung ghi chú:
+                    @Html.TextAreaFor(prop => prop.Note.NoteContent, new { cols = "1", rows = "1" })
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="update-submit" name="submit">Cập nhật</button>
+        <a class="update-view" href="@Url.Action("Detail", "Home", new { tripId = Model.CurrentTripId, shipId = Model.Ship.ShipId, all = false, currentTrip = true })">Xem</a>
+    </div>
+}
+<div class="clear"></div>
+<script>
+    // When the document loads do everything inside here ...
+    $(document).ready(function () {
+        $(".tab-content").hide();
+        $(".tab-content:first").show();
+        //$("#detail-tab-1").show();
+        // When a link is clicked
+        $("a.tabs").click(function () {
+            // switch all tabs off
+            $(".active").removeClass("active");
+
+            // switch this tab on
+            $(this).addClass("active");
+
+            // slide all content up
+            $(".tab-content").slideUp(0);
+
+            // slide this content up
+            var content_show = $(this).attr("data-id");
+            $("#" + content_show).slideDown(0);
+            // window.scrollTo(0, document.body.scrollHeight);
+            return false;
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $(".datepicker, .tab-time input, li.journey-starttime input").datepicker({
+            showButtonPanel: false,
+            dateFormat: 'dd/mm/yy',
+            altField: 'this',
+            altFormat: 'mm/dd/yy',
+            beforeShow: function () {
+                $(".ui-datepicker").css('font-size', 12)
+            }
+        });
+        $('.tab1-time').timepicker();
+    });
+
+</script>
+<script src="~/Scripts/jquery.watermark.js"></script>
+<script>
+    $('input[type=text].route-weight').watermark("Khối lượng(tấn)");
+    $('input[type=text].contract-number').watermark("Số hợp đồng");
+
+</script>
+<script>
+    $(document).ready(function () {
+        $('.add-more').on('click', function () {
+            $(this).parent().parent().find('div.update-trip-list').append($('#mrperfect').html());
+            $('input[type=text].route-weight').watermark("Khối lượng(tấn)");
+            $('input[type=text].contract-number').watermark("Số hợp đồng");
+            return false;
+        });
+    });
+</script>
+<div style="visibility: hidden" id="mrperfect">
+    <div class="update-trip">
+        <div class="category route-item">
+            @Html.DropDownListFor(model => model.CategoryIds, ((IEnumerable<Category>)Model.AvailableCategories).Select(option => new SelectListItem
+       {
+           Text = (option == null ? "Không có" : option.CategoryName),
+           Value = option.CategoryId.ToString(),
+           Selected = false
+       }), "Loại hàng", new { @class = "dropdown-list" })
+        </div>
+        <div class="weight route-item">
+            @*<input type="text" value="" class="route-weight" autocomplete="off">*@
+            @Html.TextBoxFor(p => p.Weights, new { @class = "route-weight", autocomplete = "off" })
+        </div>
+        <div class="start-port route-item">
+            @Html.DropDownListFor(model => model.StartPortIds, ((IEnumerable<Port>)Model.AvailablePorts).Select(option => new SelectListItem
+       {
+           Text = (option == null ? "Không có" : option.PortName),
+           Value = option.PortId.ToString(),
+           Selected = false
+       }), "Cảng xếp hàng ", new { @class = "dropdown-list" })
+        </div>
+        <div class="stop-port route-item">
+            @Html.DropDownListFor(model => model.StopPortIds, ((IEnumerable<Port>)Model.AvailablePorts).Select(option => new SelectListItem
+       {
+           Text = (option == null ? "Không có" : option.PortName),
+           Value = option.PortId.ToString(),
+           Selected = false
+       }), "Cảng dỡ hàng", new { @class = "dropdown-list" })
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+<script>
+    $('.route-weight').on('blur', function () {
+        if (!validateNumber($(this).val())) {
+            $(this).val('');
+            $(this).parent().find('.field-validation-valid').text('*').css("color", "red");
+        }
+    });
+    function validateNumber(str) {
+        str = str.trim();
+        return /^[+]?[0-9]+(\.[0-9]+)?$/.test(str);
+    }
+</script>
+<script>
+    $(function () {
+        $('.update-submit').click(function () {
+            $('input[type=hidden]#LoadGoodsJourney_CreatedDate').val($('#date-time1').val() + $(this).closest('.field').find('.tab1-time').val());
+            $(this).closest('form').submit();
+
+            if (document.cookie.indexOf('mycookie') == -1) {
+                // cookie doesn't exist, create it now
+                //document.cookie = 'mycookie=1';
+            }
+            else {
+                // not first visit, so alert
+                alert("Đã cập nhật thành công!");
+            }
+        });
+        //$('form').onsubmit = function () {
+        //    alert("Đã cập nhật thành công!");
+        //}
+    })
+    window.onload = function () {
+        if ('@onload' == "true") {
+            alert("Đã cập nhật thành công!");
+        }
+    }
+</script>

@@ -1,0 +1,53 @@
+﻿@model IList<Pii.Areas.CargoShip.Models.Result>
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Pii.Areas.CargoShip.Models
+<div class="reson">
+    @using (Html.BeginForm("UpdateReson", "Update", new { Area = "Cargoship" }, FormMethod.Post, null))
+    {
+        for (int i = 0; i < Model.Count; i++)
+        {
+        <div class="field">
+            Tàu: <span>@Model[i].Ship.ShipName</span>
+        </div>
+        <div class="field">
+            Mã chuyến: <span>@Model[i].TripId</span>
+        </div>
+        <div class="field">
+            Trạng thái: <span>@Model[i].State.StateName</span>
+        </div>
+         <div class="field">
+            Thời gian thực tế: <span>@Model[i].JourneyDate.Value.ToString("dd/MM/yyyy")</span>
+        </div>
+         <div class="field">
+            Mã dự kiến: <span>@Model[i].PlanId</span>
+        </div>
+         <div class="field">
+            Thời gian dự kiến: <span>@Model[i].PlanDate.Value.ToString("dd/MM/yyyy")</span>
+        </div>
+        <div class="field">
+            Kết quả: <span>@Model[i].Remark</span>
+        </div>
+        <div class="clear"></div>
+        <div class="field">
+            Lý do: 
+         @Html.DropDownListFor(model => Model[i].ResonId, ((IEnumerable<Reson>)ViewBag.availableResons).Select(option => new SelectListItem
+{
+    Text = (option == null ? "Không có" : option.ResonName),
+    Value = option.ResonId.ToString(),
+    Selected = (Model != null) && (option.ResonId == Model[i].ResonId)
+}), "", new { @class = "dropdown-list" , @name="[0]"})
+        </div>
+        @Html.HiddenFor(p=>Model[i].ShipId)
+        @Html.HiddenFor(p => Model[i].TripId)
+        @Html.HiddenFor(p=>Model[i].StateId)
+        @Html.HiddenFor(p=>Model[i].PlanId)
+        @Html.HiddenFor(p=>Model[i].ResultId)
+        <div class="clear"></div>
+    }
+        <input type="submit" name="name" value="Xác nhận" />
+        
+    }
+</div>

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    @System.Web.Optimization.Styles.Render("~/css")
+    <script src="~/Areas/Admin/Scripts/jquery-1.7.1.min.js"></script>
+    <script>
+        var ckfinder = '@Url.Action("Ckfinder", "Home", new { area = "admin" })';
+        var MakeAlias = '@Url.Action("MakeSlug", "Home", new { area = "admin" })';
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="content">
+            <div class="logo">
+                <div class="websitename"><a href="/">ironbee.vn</a></div>
+            </div>
+            <div class="buttons">
+                @RenderSection("Buttons", false)
+            </div>
+            <div class="message-header">
+                <span>Chào @User.Identity.Name</span>
+                <a href="javascript:document.getElementById('logoutForm').submit()">Thoát</a>
+                @using (Html.BeginForm("LogOff", "Home", new { area = "AccountsManager" }, FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                }
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="menu">
+            <ul class="body-menu">
+                <li>
+                    <h2>Quản trị</h2>
+                    <ul>
+                        <li id="home_admin">@Html.ActionLink("Admin", "index", "home", new { area = "admin" }, null)</li>
+                        <li id="thay_doi_mat_khau">@Html.ActionLink("Thay đổi mật khẩu", "changepassword", "home", new { area = "accountsmanager" }, null)</li>
+                        @if (User.IsInRole("Administrators"))
+                        {
+                            <li id="dsVariable">
+                                @Html.ActionLink("Cấu hình trang web", "index", "variableadmin", new { area = "variables" }, null)
+                            </li>
+                        }
+                        <li id="quan_ly_file">@Html.ActionLink("Quản lý File", "FileManager", "home", new { area = "admin" }, null)
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2>Bất động sản</h2>
+                    <ul>
+                        <li id="bat-dong-san">
+                            @Html.ActionLink("Danh sách bất động sản", "index", "Manager", new { area = "RealEstate" }, null)
+                        </li>
+                        <li id="loai-bat-dong-san">
+                            @Html.ActionLink("Loại bất động sản", "index", "PropertyType", new { area = "RealEstate" }, null)
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2>Tin tức</h2>
+                    <ul>
+                        <li id="tin-tuc">
+                            @Html.ActionLink("Danh sách tin tức", "index", "Posts", new { area = "PostsManager" }, null)
+                        </li>
+                        <li id="nhom-tin-tuc">
+                            @Html.ActionLink("Nhóm tin tức", "index", "PostGroups", new { area = "PostsManager" }, null)
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2>Quản lý khác</h2>
+                    <ul>
+                        <li id="lien-he">
+                            @Html.ActionLink("Thông tin liên hệ", "updatepage", "staticpage", new { area = "admin", alias = "lien-he" }, null)
+                        </li>
+                        <li id="ho-tro">
+                            @Html.ActionLink("Hỗ trợ trực tuyến", "index", "SupportsAdmin", new { area = "Supports" }, null)
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="main-content">
+            <div class="search-box">
+                @RenderSection("SearchBox", false)
+                <div class="clear"></div>
+            </div>
+            @RenderBody()
+        </div>
+        <div class="clear"></div>
+    </div>
+    @System.Web.Optimization.Scripts.Render("~/js")
+    <script type="text/javascript">
+        $('#@ViewBag.MenuId').addClass('active');
+    </script>
+</body>
+</html>

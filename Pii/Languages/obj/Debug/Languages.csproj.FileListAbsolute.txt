@@ -1,0 +1,20 @@
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Languages\bin\Debug\Languages.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Languages\bin\Debug\Languages.pdb
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Languages\obj\Debug\Languages.csprojResolveAssemblyReference.cache
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Languages\obj\Debug\Languages.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Languages\obj\Debug\Languages.pdb
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Languages\bin\Debug\vi\Languages.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Languages\obj\Debug\Languages.Layout.resources
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Languages\obj\Debug\Languages.Layout.vi.resources
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Languages\obj\Debug\Languages.csproj.GenerateResource.Cache
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Languages\obj\Debug\vi\Languages.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Languages\bin\Debug\Languages.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Languages\bin\Debug\Languages.pdb
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Languages\bin\Debug\vi\Languages.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Languages\obj\Debug\Languages.csprojResolveAssemblyReference.cache
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Languages\obj\Debug\Languages.Layout.resources
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Languages\obj\Debug\Languages.Layout.vi.resources
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Languages\obj\Debug\Languages.csproj.GenerateResource.Cache
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Languages\obj\Debug\vi\Languages.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Languages\obj\Debug\Languages.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Languages\obj\Debug\Languages.pdb

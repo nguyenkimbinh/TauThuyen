@@ -1,0 +1,204 @@
+﻿@model Pii.Areas.Accounts.Models.ChangePassword
+@{
+    ViewBag.Title = Languages.Layout.RealEstate;
+    IEnumerable<Pii.Areas.Banners.Models.Banner> banners = ViewBag.Banners as IEnumerable<Pii.Areas.Banners.Models.Banner>;    
+}
+
+<div class="profile-container">
+    <div class="favorite-title">
+        <h1>User Profile</h1>
+        <span></span>
+        <div class="clear"></div>
+    </div>
+    <div class="profile-content">
+
+        @using (Html.BeginForm("manage", "home", new { area = "accounts" }, FormMethod.Post, new { id = "register-form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)      
+           
+            if (ViewBag.HasLocalPassword)
+            {
+            <div class="profile-title">
+                <p>Change Password</p>
+            </div>
+            <div class="profile-field">
+                <p>Current Password:</p>
+                @Html.PasswordFor(m => m.OldPassword, new { @class = "password-input" })
+                @Html.ValidationMessageFor(m => m.OldPassword)
+                <div class="clear"></div>
+            </div>
+            <div class="profile-field">
+                <p>New Password:</p>
+                @Html.PasswordFor(m => m.NewPassword, new { @class = "password-input" })
+                @Html.ValidationMessageFor(m => m.NewPassword)
+                <div class="clear"></div>
+            </div>
+            <div class="profile-field">
+                <p>Confirm Password:</p>
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "password-input" })
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                <div class="clear"></div>
+            </div>
+            }
+            else
+            { 
+            <div class="profile-title">
+                <p>Set Password</p>
+            </div>@*
+            <p>
+                You do not have a local password for this site. Add a local
+    password so you can log in without an external login.
+            </p>            
+            *@<div class="profile-field">
+                <p>New Password:</p>
+                @Html.PasswordFor(m => m.NewPassword, new { @class = "password-input" })
+                @Html.ValidationMessageFor(m => m.NewPassword)
+                <div class="clear"></div>
+            </div>
+            <div class="profile-field">
+                <p>Confirm Password:</p>
+                @* <input class="password-input" type="text" name="name" autocomplete="off" value="" />*@
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "password-input" })
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                <div class="clear"></div>
+            </div>
+            }
+            <div class="profile-title">
+                <p>Profile Information</p>
+            </div>
+            <div class="profile-field">
+                <p>First Name:</p>
+                @*   <input class="mail-input" type="text" name="name" autocomplete="off" value="" />*@
+                @Html.EditorFor(m => m.FirstName, new { @class = "mail-input" })
+                @Html.ValidationMessageFor(m => m.FirstName)
+                <div class="clear"></div>
+            </div>
+            <div class="profile-field">
+                <p>Last Name:</p>
+                @Html.EditorFor(m => m.LastName, new { @class = "mail-input" })
+                @Html.ValidationMessageFor(m => m.LastName)
+                <div class="clear"></div>
+            </div>
+@* <div class="profile-field">
+                Birthday:
+            <input class="mail-input" type="text" name="name" autocomplete="off" value="" />
+                <div class="clear"></div>
+            </div>
+            <div class="profile-field">
+                Country:
+            <input class="mail-input" type="text" name="name" autocomplete="off" value="" />
+                <div class="clear"></div>
+            </div>
+            <div class="profile-field">
+                City:
+            <input class="mail-input" type="text" name="name" autocomplete="off" value="" />
+                <div class="clear"></div>
+            </div>*@
+            <div class="profile-field">
+                <p>Phone:</p>
+                @Html.EditorFor(m => m.PhoneNumber, new { @class = "mail-input" })
+                @Html.ValidationMessageFor(m => m.PhoneNumber)
+                <div class="clear"></div>
+            </div>
+            <div class="profile-field">
+                <p>About:</p>
+                @Html.EditorFor(m => m.AboutText, new { @class = "mail-input" })
+                @Html.ValidationMessageFor(m => m.AboutText)
+                <div class="clear"></div>
+            </div>
+            <input type="submit" value="">
+   
+        }
+ @*       @using (Ajax.BeginForm("changepassword", "home", null, new AjaxOptions() { OnSuccess = "Success" }, new { id = "register-form" }))
+        {
+            <div class="login-main">@Html.Partial("ChangePassword_Post", Model)</div>
+                       
+            
+        }*@
+    </div>
+    <!--profile-content-->
+</div>
+
+@section BannerMap{
+    <div class="banner">
+        <div id="slideshow" class="slide">
+            @foreach (var banner in banners)
+            {
+                var title = banner.GetTitle();
+                var imageLink = banner.GetImageLink();
+                var contentLink = banner.GetContentLink();
+                <a href="@contentLink" title="@title">
+                    <img src="@imageLink" /></a>
+            }
+        </div>
+        <div id="nav" class="nav">
+            @foreach (var banner in banners)
+            {
+                var title = banner.GetTitle();
+                var imageLink = banner.GetImageLink();
+                var contentLink = banner.GetContentLink();
+                <a href="@contentLink"><span>@title</span></a>
+                <span>|</span>
+                  
+            }
+        </div>
+        <a id="prev" href="#"></a>
+        <a id="next" href="#"></a>
+    </div>
+}
+
+@section scripts{
+    @* <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>*@
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+  @*  @if (ViewBag.UserName != null)
+    { 
+        <script>
+            $('.logged-account').text('@ViewBag.UserName');
+        </script>
+    }*@
+    <script>
+        //---------------ajax post success------------
+        //function Success(data) {
+        //    $(".login-main").html(data);
+        //}
+        //---------------slideshow-------------
+
+        $('#slideshow').cycle({
+            fx: 'cover',
+            speed: 500,
+            pause: true,
+            prev: '#prev',
+            next: '#next',
+            timeout: 0,
+            before: function (currSlideElement, nextSlideElement, options, forwardFlag) {
+                var index = $(nextSlideElement).index();
+                var tab = $("#nav").find('a').eq(index);
+                $("#nav a").removeClass("active");
+                $(tab).addClass("active");
+            }
+        });
+        $("#nav a").hover(function () {
+            var list = $("#nav a");
+            var index = $(list).index($(this));
+            $("#slideshow").cycle(index);
+            $("#slideshow").cycle('pause');
+        }, function () {
+            $("#slideshow").cycle('resume');
+        });
+
+        $(function () {
+            $('#slideshow').hover(function () {
+                $('#prev').fadeIn(500);
+                $('#next').fadeIn(500);
+            }, function () {
+                $('#prev').fadeOut(100);
+                $('#next').fadeOut(100);
+            });
+            $('#prev, #next').hover(function () {
+                $('#prev, #next').fadeIn(0);
+            });
+        });
+    </script>
+}

@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Forget password";
+}
+<h2>Forget password</h2>
+@if (ViewBag.Success == true)
+{
+    <p>Cấp lại mật khẩu thành công. Vui lòng kiểm tra Email và làm theo hướng dẫn!</p>
+}
+@using (Html.BeginForm())
+{ 
+    <span>Nhập địa chỉ Email của bạn</span>
+    <input type="email" required="required" name="Email" />
+    <input type="submit" value="Cấp lại mật khẩu" />
+    <p>@ViewBag.Messages</p>
+}

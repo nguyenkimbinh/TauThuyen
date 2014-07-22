@@ -1,0 +1,393 @@
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\Pii.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\Pii.pdb
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\Antlr3.Runtime.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.AspNet.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.Core.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OAuth.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OpenId.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\EntityFramework.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\Microsoft.Data.Edm.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\Microsoft.Data.OData.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\Microsoft.Web.Infrastructure.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\Newtonsoft.Json.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Net.Http.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Net.Http.Formatting.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Net.Http.WebRequest.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Spatial.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.Helpers.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.Http.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.Http.OData.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.Http.WebHost.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.Mvc.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.Optimization.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.Razor.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.WebPages.Deployment.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.WebPages.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.WebPages.Razor.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\WebGrease.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\WebMatrix.Data.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\WebMatrix.WebData.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\EntityFramework.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\Newtonsoft.Json.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Net.Http.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Net.Http.Formatting.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Net.Http.WebRequest.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.Helpers.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.Http.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.Http.WebHost.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.Mvc.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.Razor.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.WebPages.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.WebPages.Deployment.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.WebPages.Razor.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\WebMatrix.Data.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\WebMatrix.WebData.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.AspNet.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.Core.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OAuth.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OpenId.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Web.Http.OData.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\Microsoft.Data.Edm.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\Microsoft.Data.OData.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\System.Spatial.xml
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\de\Microsoft.Data.Edm.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\es\Microsoft.Data.Edm.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\it\Microsoft.Data.Edm.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\de\Microsoft.Data.OData.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\es\Microsoft.Data.OData.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\fr\Microsoft.Data.OData.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\it\Microsoft.Data.OData.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\ja\Microsoft.Data.OData.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\ko\Microsoft.Data.OData.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\ru\Microsoft.Data.OData.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\de\System.Spatial.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\es\System.Spatial.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\fr\System.Spatial.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\it\System.Spatial.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\ja\System.Spatial.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\ko\System.Spatial.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\ru\System.Spatial.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\zh-Hans\System.Spatial.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\zh-Hant\System.Spatial.resources.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\obj\Debug\Pii.csprojResolveAssemblyReference.cache
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\obj\Debug\Pii.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\obj\Debug\Pii.pdb
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\Languages.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\MvcPager.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\PiiLibrary.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\XCaptcha.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\WebActivator.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\RazorGenerator.Mvc.dll
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\Languages.pdb
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\PiiLibrary.pdb
+E:\MrZero\Projects\WebHai\Source\2013.05.18\Pii\Pii\bin\vi\Languages.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\Pii.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\Pii.pdb
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\Antlr3.Runtime.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.AspNet.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.Core.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OAuth.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OpenId.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\EntityFramework.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\Languages.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\Microsoft.Data.Edm.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\Microsoft.Data.OData.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\Microsoft.Web.Infrastructure.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\Newtonsoft.Json.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Net.Http.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Net.Http.Formatting.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Net.Http.WebRequest.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Spatial.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.Helpers.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.Http.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.Http.OData.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.Http.WebHost.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.Mvc.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.Optimization.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.Razor.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.WebPages.Deployment.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.WebPages.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.WebPages.Razor.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\WebGrease.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\WebMatrix.Data.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\WebMatrix.WebData.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\WebActivator.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\RazorGenerator.Mvc.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\Languages.pdb
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\PiiLibrary.pdb
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\EntityFramework.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\Newtonsoft.Json.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Net.Http.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Net.Http.Formatting.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Net.Http.WebRequest.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.Helpers.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.Http.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.Http.WebHost.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.Mvc.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.Razor.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.WebPages.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.WebPages.Deployment.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.WebPages.Razor.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\WebMatrix.Data.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\WebMatrix.WebData.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.AspNet.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.Core.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OAuth.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OpenId.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Web.Http.OData.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\Microsoft.Data.Edm.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\Microsoft.Data.OData.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\System.Spatial.xml
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\vi\Languages.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\de\Microsoft.Data.Edm.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\es\Microsoft.Data.Edm.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\it\Microsoft.Data.Edm.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\de\Microsoft.Data.OData.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\es\Microsoft.Data.OData.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\fr\Microsoft.Data.OData.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\it\Microsoft.Data.OData.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\ja\Microsoft.Data.OData.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\ko\Microsoft.Data.OData.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\ru\Microsoft.Data.OData.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\de\System.Spatial.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\es\System.Spatial.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\fr\System.Spatial.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\it\System.Spatial.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\ja\System.Spatial.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\ko\System.Spatial.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\ru\System.Spatial.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\zh-Hans\System.Spatial.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\zh-Hant\System.Spatial.resources.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\obj\Debug\Pii.csprojResolveAssemblyReference.cache
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\obj\Debug\Pii.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\obj\Debug\Pii.pdb
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\obj\Debug\Pii.Migrations.InitialCreate.resources
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\obj\Debug\Pii.csproj.GenerateResource.Cache
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\obj\Debug\Pii.Migrations.propertychange.resources
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\obj\Debug\Pii.Migrations.propertyaddIsAvailable.resources
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\CKEditor.NET.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\bin\CKFinder.dll
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\obj\Debug\Pii.Migrations.change.resources
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\obj\Debug\Pii.Migrations.change1.resources
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\obj\Debug\Pii.Migrations.change2.resources
+E:\Users\sang\Documents\Visual Studio 2012\Projects\Source\2013.05.18\Pii\Pii\obj\Debug\Pii.Migrations.change3.resources
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\Pii.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\Pii.pdb
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\Antlr3.Runtime.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\CKFinder.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.AspNet.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.Core.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OAuth.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OpenId.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\EntityFramework.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Data.Edm.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Data.OData.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Web.Infrastructure.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\Newtonsoft.Json.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Net.Http.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Net.Http.Formatting.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Net.Http.WebRequest.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Spatial.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Helpers.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Http.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Http.OData.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Http.WebHost.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Mvc.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Optimization.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Razor.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.WebPages.Deployment.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.WebPages.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.WebPages.Razor.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\WebGrease.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\WebMatrix.Data.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\WebMatrix.WebData.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\WebActivator.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\PiiLibrary.pdb
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\EntityFramework.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\Newtonsoft.Json.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Net.Http.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Net.Http.Formatting.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Net.Http.WebRequest.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Helpers.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Http.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Http.WebHost.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Mvc.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Razor.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.WebPages.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.WebPages.Deployment.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.WebPages.Razor.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\WebMatrix.Data.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\WebMatrix.WebData.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.AspNet.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.Core.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OAuth.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OpenId.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Http.OData.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Data.Edm.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Data.OData.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Spatial.xml
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\de\Microsoft.Data.Edm.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\es\Microsoft.Data.Edm.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\it\Microsoft.Data.Edm.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\de\Microsoft.Data.OData.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\es\Microsoft.Data.OData.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\fr\Microsoft.Data.OData.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\it\Microsoft.Data.OData.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\ja\Microsoft.Data.OData.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\ko\Microsoft.Data.OData.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\ru\Microsoft.Data.OData.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\de\System.Spatial.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\es\System.Spatial.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\fr\System.Spatial.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\it\System.Spatial.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\ja\System.Spatial.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\ko\System.Spatial.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\ru\System.Spatial.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\zh-Hans\System.Spatial.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\zh-Hant\System.Spatial.resources.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\obj\Debug\Pii.csprojResolveAssemblyReference.cache
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\obj\Debug\Pii.dll
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\obj\Debug\Pii.pdb
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\obj\Debug\Pii.Migrations.initial.resources
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\obj\Debug\Pii.csproj.GenerateResource.Cache
+E:\Project\Tau Thuyen 3-6-2013\Pii\Pii\bin\Pii.dll.config
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\Pii.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\Pii.pdb
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\Antlr3.Runtime.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\CKFinder.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.AspNet.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.Core.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OAuth.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OpenId.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\EntityFramework.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Data.Edm.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Data.OData.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Web.Infrastructure.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\Newtonsoft.Json.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Net.Http.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Net.Http.Formatting.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Net.Http.WebRequest.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Spatial.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Helpers.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Http.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Http.OData.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Http.WebHost.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Mvc.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Optimization.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Razor.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.WebPages.Deployment.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.WebPages.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.WebPages.Razor.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\WebGrease.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\WebMatrix.Data.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\WebMatrix.WebData.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\EntityFramework.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\Newtonsoft.Json.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Net.Http.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Net.Http.Formatting.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Net.Http.WebRequest.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Helpers.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Http.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Http.WebHost.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Mvc.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Razor.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.WebPages.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.WebPages.Deployment.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.WebPages.Razor.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\WebMatrix.Data.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\WebMatrix.WebData.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.AspNet.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.Core.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OAuth.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OpenId.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Web.Http.OData.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Data.Edm.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Data.OData.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\System.Spatial.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\de\Microsoft.Data.Edm.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\es\Microsoft.Data.Edm.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\it\Microsoft.Data.Edm.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\de\Microsoft.Data.OData.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\es\Microsoft.Data.OData.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\fr\Microsoft.Data.OData.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\it\Microsoft.Data.OData.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\ja\Microsoft.Data.OData.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\ko\Microsoft.Data.OData.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\ru\Microsoft.Data.OData.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\de\System.Spatial.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\es\System.Spatial.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\fr\System.Spatial.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\it\System.Spatial.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\ja\System.Spatial.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\ko\System.Spatial.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\ru\System.Spatial.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\zh-Hans\System.Spatial.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\zh-Hant\System.Spatial.resources.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\obj\Debug\Pii.Migrations.initial.resources
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\obj\Debug\Pii.csproj.GenerateResource.Cache
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\obj\Debug\Pii.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\obj\Debug\Pii.pdb
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\office.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\Microsoft.Vbe.Interop.dll
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\bin\office.xml
+D:\Users\Desktop\Tau Thuyen 3-6-2013\Pii\Pii\obj\Debug\Pii.csprojResolveAssemblyReference.cache

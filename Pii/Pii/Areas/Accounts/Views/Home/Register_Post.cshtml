@@ -1,0 +1,40 @@
+﻿@model Pii.Areas.Accounts.Models.Register
+<div class="fullname">
+    @Html.EditorFor(m => m.FirstName)
+    <p>First name:</p>
+    @Html.ValidationMessageFor(m => m.FirstName)
+    <div class="clear"></div>
+</div>
+<div class="fullname">
+    @Html.EditorFor(m => m.LastName)
+    <p>Last name:</p>
+    @Html.ValidationMessageFor(m => m.LastName)
+    <div class="clear"></div>
+</div>
+<div class="email">
+    @Html.EditorFor(m => m.Email)
+    <p>Email:</p>
+    @Html.ValidationMessageFor(m => m.Email)
+    <div class="clear"></div>
+</div>
+<div class="password">
+    @Html.EditorFor(m => m.Password)
+    <p>Password:</p>
+    @Html.ValidationMessageFor(m => m.Password)
+    <div class="clear"></div>
+</div>
+
+<div class="password">
+    @Html.EditorFor(m => m.ConfirmPassword)
+    <p>Confirm password:</p>
+    @Html.ValidationMessageFor(m => m.ConfirmPassword)
+    <div class="clear"></div>
+</div>
+<div class="remember-login register">
+    <div class="remember">
+        @Html.EditorFor(m => m.TermsAccepted)
+        @Html.ValidationMessageFor(m => m.TermsAccepted)
+        <p>Yes I have read the <a class="policy" href="#">Private policy</a> and agree to recive information</p>
+    </div>
+    <input type="submit" class="login-button register-button" value=""/>
+</div>
